@@ -16,7 +16,7 @@ int main() {
 	//Creo mis variables a utilizar, siempre DINAMICAS
 	Paciente* miPaciente = new Paciente("Julieta", "Di Marco", "06/11/1998", "49032541");
 	Paciente* miPaciente2 = new Paciente("Taylor", "Swift", "13/12/1989", "111111111");
-	//Todo viene por defecto, le doy un ID diferente a 0 (Por ahora lo vamos a hacer así, el 
+	//Todo viene por defecto, le doy un ID diferente a 0 (Por ahora lo vamos a hacer así)
 	Consultorio* Consultorio_1 = new Consultorio(1);
 	Medico* Medico1 = new Medico("Fernanda", "Gomez", "82001", "20/11/1969", eEspecialidad::Cardiologo);
 	Medico* Medico2 = new Medico("Meredith", "Grey", "15425", "15/11/1975", eEspecialidad::Gastroenterologo);
