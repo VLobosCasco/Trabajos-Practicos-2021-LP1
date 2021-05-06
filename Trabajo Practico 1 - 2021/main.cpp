@@ -16,7 +16,7 @@ int main() {
 	//Creo mis variables a utilizar, siempre DINAMICAS
 	Paciente* miPaciente = new Paciente("Julieta", "Di Marco", "06/11/1998", "49032541");
 	Paciente* miPaciente2 = new Paciente("Taylor", "Swift", "13/12/1989", "111111111");
-	//Todo viene por defecto, le doy un ID diferente a 0 (Por ahora lo vamos a hacer así, el 
+	//Todo viene por defecto, le doy un ID diferente a 0 (Por ahora lo vamos a hacer asÃ­)
 	Consultorio* Consultorio_1 = new Consultorio(1);
 	Medico* Medico1 = new Medico("Fernanda", "Gomez", "82001", "20/11/1969", eEspecialidad::Cardiologo);
 	Medico* Medico2 = new Medico("Meredith", "Grey", "15425", "15/11/1975", eEspecialidad::Gastroenterologo);
@@ -57,8 +57,8 @@ int main() {
 	cout << "---------Retiro medico---------";
 	cout << endl;
 
-	//Si no tuviera la referencia del médico, acá lo perderia en memoria y genera un Memory Leak! Por eso lo debo agarrar con un aux
-	//En el caso que el primero puntero no lo tenga más, tendría que eliminar a aux
+	//Si no tuviera la referencia del mÃ©dico, acÃ¡ lo perderia en memoria y genera un Memory Leak! Por eso lo debo agarrar con un aux
+	//En el caso que el primero puntero no lo tenga mÃ¡s, tendrÃ­a que eliminar a aux
 	Medico* aux = Consultorio_1->RetirarMedico("Fernanda");
 	Consultorio_1->ImprimirPantalla();
 
@@ -67,5 +67,6 @@ int main() {
 	delete miPaciente2;
 	delete Consultorio_1;
 	delete Medico1;
+	delete Medico2;
 
 }
