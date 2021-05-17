@@ -140,10 +140,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cFecha.cpp" />
+    <ClCompile Include="cMoto.cpp" />
     <ClCompile Include="cVehiculo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cFecha.h" />
+    <ClInclude Include="cMoto.h" />
     <ClInclude Include="cVehiculo.h" />
     <ClInclude Include="Definiciones.h" />
   </ItemGroup>

@@ -21,6 +21,9 @@
     <ClCompile Include="cVehiculo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cMoto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cFecha.h">
@@ -30,6 +33,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Definiciones.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cMoto.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
