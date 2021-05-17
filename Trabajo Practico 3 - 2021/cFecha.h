@@ -13,13 +13,10 @@ public:
 #pragma region Constructor y Destructor
 	cFecha();
 	cFecha(int d, int m, int a);
-	~cFecha() {};
 #pragma endregion
 #pragma region Metodos
 //Calcula el numero de días entre dos fechas
-	int DiasEntreFechas(cFecha* inicio, cFecha* fin);
-// Verifica que la fecha de incio sea anterior a la fecha de fin
-	bool VerificarFecha(cFecha* inicio, cFecha* fin);
+	static int DiasEntreFechas(cFecha* inicio, cFecha* fin);
 //Cambia la fecha a la fecha actual
 	void SetHoy();
 //Verifica que la fecha esté completa
@@ -28,6 +25,28 @@ public:
 	string to_string();
 // Imprime fecha
 	void ImprimirFecha();
+
+	bool operator<(cFecha& otra) {
+		time_t aux_this = mktime(&(this->fecha));
+		time_t aux_otra = mktime(&(otra.fecha));
+		return aux_this < aux_otra;
+	}
+
+	bool operator>(cFecha& otra) {
+		time_t aux_this = mktime(&(this->fecha));
+		time_t aux_otra = mktime(&(otra.fecha));
+		return aux_this > aux_otra;
+	}
+
+	bool operator==(cFecha& otra) {
+		time_t aux_this = mktime(&(this->fecha));
+		time_t aux_otra = mktime(&(otra.fecha));
+		return aux_this == aux_otra;
+	}
+
+	bool operator!=(cFecha& otra) {
+		return !(*this == otra);
+	}
 #pragma endregion
 };
 
