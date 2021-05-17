@@ -45,3 +45,8 @@ void Pasajero::Imprimir()
 {
 	cout << to_string() << endl;
 }
+
+string Pasajero::getclave()
+{
+	return DNI;
+}
