@@ -23,7 +23,7 @@ public:
 //Cambia la fecha a la fecha actual
 	void SetHoy();
 //Verifica que la fecha esté completa
-	bool FechaCompleta(cFecha* fecha);
+	bool FechaCompleta();
 //Devuelve la fecha actual en forma de string
 	string to_string();
 // Imprime fecha

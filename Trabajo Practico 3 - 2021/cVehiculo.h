@@ -28,9 +28,8 @@ public:
 	//calcula el precio del alquiler del vehículo (tarifa base + precio por día) sin tener en cuenta los adicionales
 	virtual float CalcularTarifa(int dias) = 0; 
 	/*calcula el precio del alquiler del vehículo (tarifa base + precio por día) sin tener en cuenta los adicionales
-	Recibe la fecha de inicio 	
-	*/
-	virtual float CalcularTarifa(cFecha fecha_inicio, cFecha fecha_fin) = 0;
+	Recibe la fecha de inicio */
+	virtual float CalcularTarifa(cFecha& fecha_inicio, cFecha& fecha_fin) = 0;
 #pragma endregion
 
 };

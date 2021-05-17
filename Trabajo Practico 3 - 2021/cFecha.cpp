@@ -1,6 +1,6 @@
 #include "cFecha.h"
 
-cFecha::cFecha() {
+cFecha::cFecha() { 
 	fecha.tm_hour = 0;
 	fecha.tm_min = 0;
 	fecha.tm_sec = 0;
@@ -17,14 +17,14 @@ cFecha::cFecha(int d, int m, int a)
 	fecha.tm_mon = m;
 	fecha.tm_year = a-1900;
 }
-
+//esto tiene que ser static
 int cFecha::DiasEntreFechas(cFecha* inicio, cFecha* fin)
 {
 	int dif = 0;
 	time_t aux_inicio = mktime(&(inicio->fecha));
 	time_t aux_fin = mktime(&(fin->fecha));
 	//verifico que las fechas que recibo no sean null ni estén incompletas
-	if ((inicio != NULL && fin != NULL) && FechaCompleta(inicio) && FechaCompleta(fin)) {
+	if ((inicio != NULL && fin != NULL) && inicio->FechaCompleta() && fin->FechaCompleta()) {
 		if (!VerificarFecha(inicio, fin)) //verifico que fecha fin > fecha inicio
 			throw new exception("Las fechas no son válidas");
 		else {
@@ -53,14 +53,14 @@ void cFecha::SetHoy()
 	fecha.tm_year = aux->tm_mon;
 }
 
-bool cFecha::FechaCompleta(cFecha* fecha)
+bool cFecha::FechaCompleta()
 {
-	if (fecha->fecha.tm_year != 0 && fecha->fecha.tm_mon != 0 && fecha->fecha.tm_mday != 0) //verifico que los parámetros de día no esténe n sus valores nulos
+	if (fecha.tm_year != 0 && fecha.tm_mon != 0 && fecha.tm_mday != 0) //verifico que los parámetros de día no esténe n sus valores nulos
 		return true;
 	return false;
 }
 
 string cFecha::to_string()
 {
-	string aux= std::to_string(fecha.tm_mday)
+	//string aux= std::to_string(fecha.tm_mday)
 }
