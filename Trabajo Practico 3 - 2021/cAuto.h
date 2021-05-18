@@ -2,7 +2,8 @@
 #include "cVehiculo.h"
 #include "cFecha.h"
 #include <iostream>
-class cMoto :
+
+class cAuto :
     protected cVehiculo
 {
 public:
@@ -10,8 +11,8 @@ public:
     static float precio_diario;
 
 #pragma region Constructor
-    cMoto(string patente_c, string chasis_c, string poliza_c, eColores color_c);
-    cMoto(string patente_c, string chasis_c, string poliza_c, eColores color_c, cFecha* ult_mantenimiento);
+    cAuto(string patente_c, string chasis_c, string poliza_c, eColores color_c, int cant_pasaj_c);
+    cAuto(string patente_c, string chasis_c, string poliza_c, eColores color_c, int cant_pasaj_c, cFecha* ult_mantenimiento);
 
 #pragma endregion
 #pragma region Metodos

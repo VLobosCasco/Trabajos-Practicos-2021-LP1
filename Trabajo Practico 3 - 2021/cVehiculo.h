@@ -16,9 +16,11 @@ public:
 	const string patente;
 	int cant_pasajeros;
 	eColores color;
+
 #pragma region Constructores y Destructores
 //Constructor. Inicializa la fecha de último mantenimiento como la fecha actual.
 	cVehiculo(string patente_c, string chasis_c, string poliza_c, eColores color_c, int cant_pasajeros_c);
+	cVehiculo(string patente_c, string chasis_c, string poliza_c, eColores color_c, int cant_pasajeros_c, cFecha* ult_mantenimiento);
 	~cVehiculo();
 #pragma endregion
 #pragma region Metodos

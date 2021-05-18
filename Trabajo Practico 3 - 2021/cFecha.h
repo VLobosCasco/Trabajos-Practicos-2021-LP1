@@ -18,6 +18,7 @@ public:
 	cFecha(int d, int m, int a);
 #pragma endregion
 #pragma region Metodos
+public:
 //Calcula el numero de días entre dos fechas
 	static int DiasEntreFechas(cFecha* inicio, cFecha* fin);
 //Cambia la fecha a la fecha actual

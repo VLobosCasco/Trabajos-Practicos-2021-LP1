@@ -139,13 +139,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cAuto.cpp" />
+    <ClCompile Include="cCamioneta.cpp" />
     <ClCompile Include="cFecha.cpp" />
     <ClCompile Include="cMoto.cpp" />
+    <ClCompile Include="cTrafic.cpp" />
     <ClCompile Include="cVehiculo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cAuto.h" />
+    <ClInclude Include="cCamioneta.h" />
     <ClInclude Include="cFecha.h" />
     <ClInclude Include="cMoto.h" />
+    <ClInclude Include="cTrafic.h" />
     <ClInclude Include="cVehiculo.h" />
     <ClInclude Include="Definiciones.h" />
   </ItemGroup>

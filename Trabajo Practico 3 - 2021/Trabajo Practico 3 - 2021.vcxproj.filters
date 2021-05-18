@@ -24,6 +24,15 @@
     <ClCompile Include="cMoto.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cAuto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCamioneta.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cTrafic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cFecha.h">
@@ -36,6 +45,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="cMoto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cAuto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCamioneta.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cTrafic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
