@@ -33,6 +33,12 @@
     <ClCompile Include="cTrafic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cAlquiler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCliente.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cFecha.h">
@@ -54,6 +60,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="cTrafic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cAlquiler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCliente.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cListaT.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
