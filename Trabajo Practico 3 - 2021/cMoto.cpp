@@ -17,7 +17,7 @@ float cMoto::CalcularTarifa(cFecha& fecha_inicio, cFecha& fecha_fin)
 {
 	int dias = 0;
 	try {
-		 dias = cFecha::DiasEntreFechas(&fecha_inicio, &fecha_fin));
+		 dias = cFecha::DiasEntreFechas(&fecha_inicio, &fecha_fin);
 	}
 	catch(exception * ex){
 		string error = ex->what();
@@ -42,6 +42,6 @@ void cMoto::Imprimir()
 
 string cMoto::to_string() {
 
-
+	return string();
 }
 

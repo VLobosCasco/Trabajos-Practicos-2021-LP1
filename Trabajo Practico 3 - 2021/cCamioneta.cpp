@@ -16,7 +16,7 @@ float cCamioneta::CalcularTarifa(cFecha& fecha_inicio, cFecha& fecha_fin)
 {
 	int dias = 0;
 	try {
-		dias = cFecha::DiasEntreFechas(&fecha_inicio, &fecha_fin));
+		dias = cFecha::DiasEntreFechas(&fecha_inicio, &fecha_fin);
 	}
 	catch (exception* ex) {
 		string error = ex->what();
@@ -41,6 +41,6 @@ void cCamioneta::Imprimir()
 
 string cCamioneta::to_string() {
 
-
+	return string();
 }
 

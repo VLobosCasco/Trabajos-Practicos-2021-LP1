@@ -41,9 +41,9 @@ public:
 #pragma endregion
 #pragma region Getters y Setters
 //devuelve la patente(clave)
-	string getclave(); //necesaria para usar lista
+	string getclave() const { return patente; }//necesaria para usar lista
 //devuelve la patente
-	string getpatente();
+	string getpatente() const { return patente; }
 #pragma endregion
 };
 

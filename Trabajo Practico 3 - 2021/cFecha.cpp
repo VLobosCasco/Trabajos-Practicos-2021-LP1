@@ -56,7 +56,7 @@ bool cFecha::FechaCompleta()
 
 string cFecha::to_string()
 {
-	
+	return string();
 }
 
 void cFecha::ImprimirFecha() {

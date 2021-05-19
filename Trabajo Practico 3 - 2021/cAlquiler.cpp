@@ -26,7 +26,7 @@ string cAlquiler::to_string()
 
 void cAlquiler::Imprimir()
 {
-	cout << to_string << endl;
+	cout << to_string ()<< endl;
 }
 
 string cAlquiler::getclave()

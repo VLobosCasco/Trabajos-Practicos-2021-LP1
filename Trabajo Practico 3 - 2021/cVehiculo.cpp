@@ -33,7 +33,7 @@ void cVehiculo::Imprimir()
 {
 	cout << to_string();
 }
-
+/*
 string cVehiculo::getclave()
 {
 	return patente;
@@ -42,4 +42,4 @@ string cVehiculo::getclave()
 string cVehiculo::getpatente()
 {
 	return patente;
-}
+}*/
