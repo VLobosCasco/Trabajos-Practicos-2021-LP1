@@ -47,6 +47,12 @@ cListaAdicional::cListaAdicional(cVehiculo* v, float costo1, float costo2)
 
 }
 
+cListaAdicional::~cListaAdicional()
+{
+	if (adicional1 != NULL) delete adicional1;
+	if (adicional2 != NULL) delete adicional2;
+}
+
 void cListaAdicional::ActualizarTarifaDiaria()
 {
 	tarifa_diaria_adicionales = adicional1->CalcularCostoDiarioTotal() + adicional2->CalcularCostoDiarioTotal();
