@@ -1,6 +1,6 @@
 #include "cEmpresa.h"
 
-cEmpresa::cEmpresa(string n, cListaVehiculo* v, cListaCliente* c, cListaAlquiler* a):nombre(n)
+cEmpresa::cEmpresa(string n, cListaT<cVehiculo>* v, cListaT<cCliente>* c, cListaAlquiler* a):nombre(n)
 {
 	vehiculos = v;
 	alquileres = a;

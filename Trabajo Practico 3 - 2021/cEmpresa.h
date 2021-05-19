@@ -1,17 +1,17 @@
 #pragma once
 #include "cListaAlquiler.h"
-#include "cListaCliente.h"
-#include "cListaVehiculo.h"
+#include "cListaT.h"
 class cEmpresa
 {
 private:
 	const string nombre;
-	cListaVehiculo* vehiculos;
+	cListaT<cVehiculo>* vehiculos;
 	cListaAlquiler* alquileres;
-	cListaCliente* clientes;
+	cListaT<cCliente>* clientes;
+
 public:
 #pragma region Constructor y Destructor
-	cEmpresa(string n, cListaVehiculo* v, cListaCliente* c, cListaAlquiler* a);
+	cEmpresa(string n, cListaT<cVehiculo>* v, cListaT<cCliente>* c, cListaAlquiler* a);
 #pragma endregion
 #pragma region Adquirir y Retirar de Circulación Vehiculos
 //Agrega vehículo a la lista de vehículos

@@ -42,13 +42,13 @@
     <ClCompile Include="cListaAlquiler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cListaCliente.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="cEmpresa.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cListaVehiculo.cpp">
+    <ClCompile Include="cAdicional.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cListaAdicional.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -86,13 +86,13 @@
     <ClInclude Include="cListaAlquiler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cListaCliente.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="cEmpresa.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cListaVehiculo.h">
+    <ClInclude Include="cAdicional.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cListaAdicional.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
