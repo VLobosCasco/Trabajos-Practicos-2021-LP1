@@ -33,3 +33,13 @@ void cVehiculo::Imprimir()
 {
 	cout << to_string();
 }
+
+string cVehiculo::getclave()
+{
+	return clave;
+}
+
+string cVehiculo::getpatente()
+{
+	return clave;
+}

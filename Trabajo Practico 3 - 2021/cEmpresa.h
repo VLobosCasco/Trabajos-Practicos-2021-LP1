@@ -24,6 +24,8 @@ public:
 #pragma region Mantenimiento
 //Imprime los pasos de mantenimiento y actualiza la fecha de ultimo mantenimiento
 	void Mantenimiento(cVehiculo* v);
+//Imprime los pasos de mantenimiento y actualiza la fecha de ultimo mantenimiento
+	void Mantenimiento(string patente);
 #pragma endregion
 #pragma region To_string e Imprimir
 	string to_string();

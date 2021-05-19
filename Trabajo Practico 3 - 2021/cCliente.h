@@ -7,7 +7,7 @@ using namespace std;
 class cCliente
 {
 public:
-	const string IdCliente;
+	const string clave; //Sería un IDCliente
 		
 private:
 	string TarjetadeCredito;
@@ -27,6 +27,11 @@ public:
 	cCliente(string dni, string nombreapellido, int dia, int mes, int anio, string tarj_cred);
 	~cCliente();
 #pragma endregion 
-
+#pragma region Getters y Setters
+//devuelve el IDCliente (clave)
+	string getclave();
+//devuelve IDCliente
+	string getID();
+#pragma endregion
 };
 

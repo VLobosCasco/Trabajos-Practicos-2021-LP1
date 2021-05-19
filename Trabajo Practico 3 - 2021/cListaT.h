@@ -33,7 +33,6 @@ public:
 
 
 	unsigned int getItemPos(string clave);
-	unsigned int getMinimo;
 	unsigned int getCA();
 	unsigned int getTAM();
 	T** getvector();

@@ -12,7 +12,7 @@ class cListaAlquiler;
 class cAlquiler
 {
 public:
-	const string ID;
+	const string clave;
 	cCliente* cliente;
 	cVehiculo* vehiculo;
 	static cListaAlquiler* ListaAlquileres;
@@ -27,6 +27,12 @@ public:
 #pragma region To_string e Imprimir
 	string to_string();
 	void Imprimir();
+#pragma endregion
+#pragma region Getters y Setters
+//devuelve IDAlquiler (clave)
+	string getclave(); //lo necesito para la lista
+//devuelve IDAlquiler
+	string getID();
 #pragma endregion
 };
 

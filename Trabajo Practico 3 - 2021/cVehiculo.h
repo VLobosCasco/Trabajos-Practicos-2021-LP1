@@ -13,7 +13,7 @@ protected:
 	cFecha* Ultimo_Mantenimiento;
 	
 public:
-	const string patente;
+	const string clave;//la patente, se llama clave para poder usarlo bien en la lista
 	int cant_pasajeros;
 	eColores color;
 
@@ -38,6 +38,12 @@ public:
 #pragma region To_string e Imprimir
 	string to_string();
 	void Imprimir();
+#pragma endregion
+#pragma region Getters y Setters
+//devuelve la patente(clave)
+	string getclave(); //necesaria para usar lista
+//devuelve la patente
+	string getpatente();
 #pragma endregion
 };
 

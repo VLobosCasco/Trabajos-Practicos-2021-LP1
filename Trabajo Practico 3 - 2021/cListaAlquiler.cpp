@@ -60,6 +60,7 @@ float cListaAlquiler::ListaryGananciaAlquilerMotos()
 			ganancia = ganancia + vector[i]->monto_total;
 		}
 	}
+	return ganancia;
 }
 
 float cListaAlquiler::ListaryGananciaAlquilerAutos()
@@ -74,6 +75,7 @@ float cListaAlquiler::ListaryGananciaAlquilerAutos()
 			g = g + vector[i]->monto_total;
 		}
 	}
+	return g;
 }
 
 float cListaAlquiler::ListaryGananciaAlquilerCamionetas()
@@ -88,6 +90,7 @@ float cListaAlquiler::ListaryGananciaAlquilerCamionetas()
 			g = g + vector[i]->monto_total;
 		}
 	}
+	return g;
 }
 
 float cListaAlquiler::ListaryGananciaAlquilerTrafics()
@@ -102,6 +105,7 @@ float cListaAlquiler::ListaryGananciaAlquilerTrafics()
 			g = g + vector[i]->monto_total;
 		}
 	}
+	return g;
 }
 
 float cListaAlquiler::ListaryGanancia()

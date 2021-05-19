@@ -60,6 +60,12 @@ void cEmpresa::Mantenimiento(cVehiculo* v)
 	v->PasosMantenimiento();
 }
 
+void cEmpresa::Mantenimiento(string patente)
+{
+	cVehiculo* aux =vehiculos->BuscarItem(patente);
+	Mantenimiento(aux);
+}
+
 string cEmpresa::to_string()
 {
 	return string();
