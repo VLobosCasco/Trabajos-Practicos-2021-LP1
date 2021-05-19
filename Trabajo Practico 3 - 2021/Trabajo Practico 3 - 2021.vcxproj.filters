@@ -39,6 +39,18 @@
     <ClCompile Include="cCliente.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cListaAlquiler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cListaCliente.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cEmpresa.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cListaVehiculo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cFecha.h">
@@ -69,6 +81,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="cListaT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cListaAlquiler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cListaCliente.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cEmpresa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cListaVehiculo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

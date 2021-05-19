@@ -20,7 +20,13 @@ public:
 	cFecha* fecha_fin;
 	float monto_total;
 	float tarifa_diaria_adicionales;
-private:
 
+#pragma region Constructor y Destructor
+
+#pragma endregion
+#pragma region To_string e Imprimir
+	string to_string();
+	void Imprimir();
+#pragma endregion
 };
 

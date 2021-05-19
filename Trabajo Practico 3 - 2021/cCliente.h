@@ -21,8 +21,10 @@ private:
 public:
 //Constructor por defecto, la fecha de nacimiento será la fecha actual, tendrá un ID válido.
 	cCliente();
-//Constructor por parámetros
+//Constructor por parámetros, recibe puntero a cFecha
 	cCliente(string dni, string nombreapellido, cFecha* fdn, string tarj_cred);
+//Constructor por parámetros, recibe datos de dia, mes, año
+	cCliente(string dni, string nombreapellido, int dia, int mes, int anio, string tarj_cred);
 	~cCliente();
 #pragma endregion 
 
