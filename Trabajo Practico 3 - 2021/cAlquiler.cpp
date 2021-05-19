@@ -14,6 +14,11 @@ cAlquiler::cAlquiler(cCliente* c, cVehiculo* v, cFecha* fi, cFecha* ff, float co
 
 }
 
+cAlquiler::~cAlquiler()
+{
+	if (adicionales != NULL) delete adicionales;
+}
+
 string cAlquiler::to_string()
 {
 	return string();

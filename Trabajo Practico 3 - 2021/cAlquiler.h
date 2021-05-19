@@ -27,6 +27,7 @@ private:
 
 #pragma region Constructor y Destructor
 	cAlquiler(cCliente * c, cVehiculo * v, cFecha * fi, cFecha* ff, float costo1=0, float costo2=0);
+	~cAlquiler();
 #pragma endregion
 #pragma region To_string e Imprimir
 	string to_string();
