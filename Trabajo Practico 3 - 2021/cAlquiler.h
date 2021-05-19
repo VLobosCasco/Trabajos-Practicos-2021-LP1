@@ -16,6 +16,10 @@ public:
 	cCliente* cliente;
 	cVehiculo* vehiculo;
 	static cListaAlquiler* ListaAlquileres;
+	cFecha* fecha_inicio;
+	cFecha* fecha_fin;
+	float monto_total;
+	float tarifa_diaria_adicionales;
 private:
 
 };

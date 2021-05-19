@@ -1,6 +1,4 @@
-﻿
-#if !defined(EA_B9741D49_13D8_46c1_8B11_F0F70B4304B8__INCLUDED_)
-#define EA_B9741D49_13D8_46c1_8B11_F0F70B4304B8__INCLUDED_
+﻿#pragma once
 #define NMAX 10000
 #include <string>
 using namespace std;
@@ -62,6 +60,19 @@ unsigned int cListaT<T>::getCA()
 template<class T>
 void cListaT<T>::Redimensionalizar()
 {
+	T** aux = new T * [2*TAM];
+
+	for (int i = 0; i < 2*TAM ; i++)
+		aux[i] = NULL;
+
+	for (int i = 0; i < TAM; i++)
+		aux[i] = vector[i];
+
+	delete[] vector;
+
+	vector = aux;
+	TAM = 2 * TAM;
+
 }
 
 template<class T>
@@ -97,8 +108,7 @@ cListaT<T>::~cListaT()
 template<class T>
 void cListaT<T>::Listar()
 {
-
-	for (unsigned int i = 0; i < CA; i++)
+		for (unsigned int i = 0; i < CA; i++)
 	{
 		vector[i]->Imprimir();// imprimir
 	}
@@ -177,10 +187,16 @@ template<class T>
 void cListaT<T>::Eliminar(string clave) {
 
 	unsigned int pos = getItemPos(clave);
-
-	if (pos < CA)
+	try {
 		Eliminar(pos);
-	//sino algo
+		}
+	catch (exception* ex) {
+		string error = ex->what();
+		delete ex;
+		ex = new exception(("Error al obtener la posición del item: " + error).c_str());
+		throw ex;
+	}
+
 
 }
 
