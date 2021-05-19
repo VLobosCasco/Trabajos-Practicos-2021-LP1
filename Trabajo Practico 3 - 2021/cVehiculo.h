@@ -13,7 +13,7 @@ protected:
 	cFecha* Ultimo_Mantenimiento;
 	
 public:
-	const string clave;//la patente, se llama clave para poder usarlo bien en la lista
+	const string patente;//clave
 	int cant_pasajeros;
 	eColores color;
 

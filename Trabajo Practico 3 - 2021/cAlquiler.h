@@ -12,7 +12,7 @@ class cListaAlquiler;
 class cAlquiler
 {
 public:
-	const string clave;
+	const string IDAlquiler;
 	cCliente* cliente;
 	cVehiculo* vehiculo;
 	static cListaAlquiler* ListaAlquileres;

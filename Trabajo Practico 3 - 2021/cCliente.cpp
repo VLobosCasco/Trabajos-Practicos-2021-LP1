@@ -2,7 +2,7 @@
 
 int cCliente::Cant_clientes = 0;
 
-cCliente::cCliente():clave(to_string(Cant_clientes)), DNI(to_string(0))
+cCliente::cCliente():IDCliente(to_string(Cant_clientes)), DNI(to_string(0))
 {
 	Cant_clientes++;
 	NombreCompleto = "Sin datos";
@@ -10,7 +10,7 @@ cCliente::cCliente():clave(to_string(Cant_clientes)), DNI(to_string(0))
 	TarjetadeCredito = "Sin datos";
 }
 
-cCliente::cCliente(string dni, string nombreapellido, cFecha* fdn, string tarj_cred) :clave(to_string(Cant_clientes)), DNI(dni)
+cCliente::cCliente(string dni, string nombreapellido, cFecha* fdn, string tarj_cred) :IDCliente(to_string(Cant_clientes)), DNI(dni)
 {
 	Cant_clientes++;
 	NombreCompleto = nombreapellido;
@@ -18,7 +18,7 @@ cCliente::cCliente(string dni, string nombreapellido, cFecha* fdn, string tarj_c
 	TarjetadeCredito = tarj_cred;
 }
 
-cCliente::cCliente(string dni, string nombreapellido, int dia, int mes, int anio, string tarj_cred) :clave(to_string(Cant_clientes)), DNI(dni)
+cCliente::cCliente(string dni, string nombreapellido, int dia, int mes, int anio, string tarj_cred) :IDCliente(to_string(Cant_clientes)), DNI(dni)
 {
 	Cant_clientes++;
 	NombreCompleto = nombreapellido;
@@ -34,12 +34,12 @@ cCliente::~cCliente()
 
 string cCliente::getclave()
 {
-	return clave;
+	return IDCliente;
 }
 
 string cCliente::getID()
 {
-	return clave;
+	return IDCliente;
 }
 
 

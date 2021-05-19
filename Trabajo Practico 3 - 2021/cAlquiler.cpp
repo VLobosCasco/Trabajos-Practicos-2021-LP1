@@ -12,10 +12,10 @@ void cAlquiler::Imprimir()
 
 string cAlquiler::getclave()
 {
-	return clave;
+	return IDAlquiler;
 }
 
 string cAlquiler::getID()
 {
-	return clave;
+	return IDAlquiler;
 }

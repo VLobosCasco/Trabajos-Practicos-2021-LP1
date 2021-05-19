@@ -36,10 +36,10 @@ void cVehiculo::Imprimir()
 
 string cVehiculo::getclave()
 {
-	return clave;
+	return patente;
 }
 
 string cVehiculo::getpatente()
 {
-	return clave;
+	return patente;
 }

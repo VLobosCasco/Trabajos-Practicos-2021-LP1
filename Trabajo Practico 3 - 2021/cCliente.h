@@ -7,7 +7,7 @@ using namespace std;
 class cCliente
 {
 public:
-	const string clave; //Sería un IDCliente
+	const string IDCliente; //clave
 		
 private:
 	string TarjetadeCredito;
