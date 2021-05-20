@@ -151,6 +151,7 @@
     <ClCompile Include="cMoto.cpp" />
     <ClCompile Include="cTrafic.cpp" />
     <ClCompile Include="cVehiculo.cpp" />
+    <ClCompile Include="funciones.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +169,7 @@
     <ClInclude Include="cTrafic.h" />
     <ClInclude Include="cVehiculo.h" />
     <ClInclude Include="Definiciones.h" />
+    <ClInclude Include="funciones.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
