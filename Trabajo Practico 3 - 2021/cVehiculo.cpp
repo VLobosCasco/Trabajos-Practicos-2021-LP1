@@ -26,14 +26,20 @@ void cVehiculo::ActualizarMantenimiento() {
 	Ultimo_Mantenimiento->SetHoy();
 }
 
-string cVehiculo::to_string()
+string cVehiculo::To_string()
 {
-	return string();
+	return
+		"Chasis: " + chasis + "\n" +
+		"Poliza: " + poliza + "\n" +
+		"Patente: " + patente + "\n" +
+		"Ultimo Mantenimiento: " + Ultimo_Mantenimiento->to_string() + "\n" +
+		"Color: " + ConvertColorString(color) + "\n" +
+		"Cantidad de Pasajeros: " + to_string(cant_pasajeros);
 }
 
 void cVehiculo::Imprimir()
 {
-	cout << to_string();
+	cout << To_string();
 }
 /*
 string cVehiculo::getclave()

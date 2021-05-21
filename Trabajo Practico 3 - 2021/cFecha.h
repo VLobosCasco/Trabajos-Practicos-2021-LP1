@@ -28,7 +28,7 @@ public:
 //Verifica que la fecha esté completa
 	bool FechaCompleta();
 //Devuelve la fecha actual en forma de string
-	string to_string();
+	string To_string();
 // Imprime fecha
 	void ImprimirFecha();
 #pragma endregion

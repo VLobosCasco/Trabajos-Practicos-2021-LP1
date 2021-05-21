@@ -24,7 +24,7 @@ public:
     void PasosMantenimiento();
 #pragma endregion
 #pragma region To_string e Imprimir
-    string to_string();
+    string To_string();
     void Imprimir();
 };
 

@@ -3,6 +3,7 @@
 #include <string>
 #include "Definiciones.h"
 #include "cFecha.h"
+#include "Definiciones.h"
 using namespace std;
 
 class cVehiculo
@@ -37,7 +38,7 @@ public:
 	virtual void PasosMantenimiento() = 0;
 #pragma endregion
 #pragma region To_string e Imprimir
-	string to_string();
+	string To_string();
 	void Imprimir();
 #pragma endregion
 #pragma region Getters y Setters

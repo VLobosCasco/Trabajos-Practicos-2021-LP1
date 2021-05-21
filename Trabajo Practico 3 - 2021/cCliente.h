@@ -33,5 +33,9 @@ public:
 //devuelve IDCliente
 	string getID();
 #pragma endregion
+#pragma region To_string e Imprimir
+	string To_string();
+	void Imprimir();
+#pragma endregion
 };
 

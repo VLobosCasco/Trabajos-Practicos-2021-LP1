@@ -42,4 +42,14 @@ string cCliente::getID()
 	return IDCliente;
 }
 
+string cCliente::To_string()
+{
+	return string();
+}
+
+void cCliente::Imprimir()
+{
+	cout << To_string() << endl;
+}
+
 
