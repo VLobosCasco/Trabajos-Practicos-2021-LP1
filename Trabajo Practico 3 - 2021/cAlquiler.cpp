@@ -19,14 +19,14 @@ cAlquiler::~cAlquiler()
 	if (adicionales != NULL) delete adicionales;
 }
 
-string cAlquiler::to_string()
+string cAlquiler::To_string()
 {
 	return string();
 }
 
 void cAlquiler::Imprimir()
 {
-	cout << to_string ()<< endl;
+	cout << To_string ()<< endl;
 }
 
 string cAlquiler::getclave()
