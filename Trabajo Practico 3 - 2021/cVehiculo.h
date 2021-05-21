@@ -16,6 +16,7 @@ public:
 	const string patente;//clave
 	int cant_pasajeros;
 	eColores color;
+	eEstado estado;
 
 #pragma region Constructores y Destructores
 //Constructor. Inicializa la fecha de último mantenimiento como la fecha actual.

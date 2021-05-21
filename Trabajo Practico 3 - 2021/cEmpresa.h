@@ -22,10 +22,14 @@ public:
 	void RetirardeCirculacion(string patente);
 #pragma endregion
 #pragma region Mantenimiento
-//Imprime los pasos de mantenimiento y actualiza la fecha de ultimo mantenimiento
+//Imprime los pasos de mantenimiento y cambia el estado a "en mantenimiento"
 	void Mantenimiento(cVehiculo* v);
-//Imprime los pasos de mantenimiento y actualiza la fecha de ultimo mantenimiento
+//Imprime los pasos de mantenimiento y cambia el estado a "en mantenimiento"
 	void Mantenimiento(string patente);
+//Actualiza la fecha de mantenimiento y cambia el estado a libre
+	void TerminarMantenimiento(cVehiculo* v);
+	//Actualiza la fecha de mantenimiento y cambia el estado a libre
+	void TerminarMantenimiento(string p);
 #pragma endregion
 #pragma region To_string e Imprimir
 	string to_string();

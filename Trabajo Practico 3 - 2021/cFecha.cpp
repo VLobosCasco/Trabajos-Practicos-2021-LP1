@@ -8,6 +8,9 @@ cFecha::cFecha() {
 	fecha.tm_mon = 0;
 	fecha.tm_year = 0;
 	SetHoy();
+	fecha.tm_wday = 0;
+	fecha.tm_yday = 0;
+	fecha.tm_isdst = 0;
 }
 cFecha::cFecha(int d, int m, int a)
 {
@@ -17,6 +20,9 @@ cFecha::cFecha(int d, int m, int a)
 	fecha.tm_mday = d;
 	fecha.tm_mon = m;
 	fecha.tm_year = a-1900;
+	fecha.tm_wday = 0;
+	fecha.tm_yday = 0;
+	fecha.tm_isdst=0;
 }
 
 int cFecha::DiasEntreFechas(cFecha* inicio, cFecha* fin)
@@ -27,7 +33,7 @@ int cFecha::DiasEntreFechas(cFecha* inicio, cFecha* fin)
 	//verifico que las fechas que recibo no sean null ni estén incompletas
 	if ((inicio != NULL && fin != NULL) && inicio->FechaCompleta() && fin->FechaCompleta()) {
 		//verifico que fecha fin > fecha inicio con operador sobrecargado
-		if (inicio<fin) 
+		if (inicio>fin) 
 			throw new exception("Las fechas no son válidas");
 		else {
 			dif = difftime(aux_fin, aux_inicio)/(86400); //calculo la diferencia de tiempo y la devuelvo

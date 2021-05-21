@@ -4,13 +4,16 @@ int cAlquiler::Cont_alquiler = 0;
 
 cAlquiler::cAlquiler(cCliente* c, cVehiculo* v, cFecha* fi, cFecha* ff, float costo1,float costo2):IDAlquiler(std::to_string(Cont_alquiler))
 {
-	Cont_alquiler++;
 	cliente = c;
-	vehiculo = v;
+	if (v->estado == eEstado::Libre)
+		vehiculo = v;
+	else
+		throw new exception("El vehículo no se encuentra disponible");
 	fecha_inicio = fi;
 	fecha_fin = ff;
 	adicionales = new cListaAdicional(v,costo1,costo2);
 	ActualizarMontoTotal();
+	Cont_alquiler++;
 
 }
 
@@ -55,3 +58,4 @@ void cAlquiler::AgregarAdicional(eTipoAdicional e, int cant)
 		throw ex;
 	}
 }
+
