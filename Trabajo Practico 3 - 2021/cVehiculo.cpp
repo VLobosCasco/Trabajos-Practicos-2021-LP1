@@ -32,7 +32,7 @@ string cVehiculo::To_string()
 		"Chasis: " + chasis + "\n" +
 		"Poliza: " + poliza + "\n" +
 		"Patente: " + patente + "\n" +
-		"Ultimo Mantenimiento: " + Ultimo_Mantenimiento->to_string() + "\n" +
+		"Ultimo Mantenimiento: " + Ultimo_Mantenimiento->To_string() + "\n" +
 		"Color: " + ConvertColorString(color) + "\n" +
 		"Cantidad de Pasajeros: " + to_string(cant_pasajeros);
 }

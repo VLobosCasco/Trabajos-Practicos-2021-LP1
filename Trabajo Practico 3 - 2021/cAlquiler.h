@@ -44,7 +44,8 @@ public:
 	void ActualizarMontoTotal();
 //Agregar Adicional. Recibe el tipo de adicional y la cantidad, por default agrega 1
 	void AgregarAdicional(eTipoAdicional e, int cant =1);
-
+//Verifica que el vehículo se encuentre disponible entre las dos fechas
+	bool VerificarDisponibilidad(cFecha* inicio, cFecha* fin);
 #pragma endregion
 };
 

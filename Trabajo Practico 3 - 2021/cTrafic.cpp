@@ -37,10 +37,10 @@ void cTrafic::PasosMantenimiento()
 
 void cTrafic::Imprimir()
 {
-	cout << to_string() << endl;
+	cout << To_string() << endl;
 }
 
-string cTrafic::to_string() {
+string cTrafic::To_string() {
 
 	return string();
 }

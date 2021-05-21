@@ -36,10 +36,10 @@ void cCamioneta::PasosMantenimiento()
 
 void cCamioneta::Imprimir()
 {
-	cout << to_string() << endl;
+	cout << To_string() << endl;
 }
 
-string cCamioneta::to_string() {
+string cCamioneta::To_string() {
 
 	return string();
 }

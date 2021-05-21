@@ -59,3 +59,9 @@ void cAlquiler::AgregarAdicional(eTipoAdicional e, int cant)
 	}
 }
 
+bool cAlquiler::VerificarDisponibilidad(cFecha* inicio, cFecha* fin)
+{
+
+	return false;
+}
+

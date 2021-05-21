@@ -36,10 +36,10 @@ void cAuto::PasosMantenimiento()
 
 void cAuto::Imprimir()
 {
-	cout << to_string() << endl;
+	cout << To_string() << endl;
 }
 
-string cAuto::to_string() {
+string cAuto::To_string() {
 
 	return string();
 }

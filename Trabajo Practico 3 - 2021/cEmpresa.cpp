@@ -91,12 +91,12 @@ void cEmpresa::TerminarMantenimiento(string p) {
 	aux->estado = eEstado::Libre;
 }
 
-string cEmpresa::to_string()
+string cEmpresa::To_string()
 {
 	return string();
 }
 
 void cEmpresa::Imprimir()
 {
-	cout << to_string() << endl;
+	cout << To_string() << endl;
 }

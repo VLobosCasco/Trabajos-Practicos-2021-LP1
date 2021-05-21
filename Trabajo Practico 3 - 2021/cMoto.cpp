@@ -37,10 +37,10 @@ void cMoto::PasosMantenimiento()
 
 void cMoto::Imprimir()
 {
-	cout << to_string()<< endl;
+	cout << To_string()<< endl;
 }
 
-string cMoto::to_string() {
+string cMoto::To_string() {
 
 	return string();
 }

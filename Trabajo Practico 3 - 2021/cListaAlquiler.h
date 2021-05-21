@@ -24,6 +24,9 @@ public:
     float ListaryGananciaAlquilerTrafics();
 //Lista todos los alquileres y devuelve la ganancia total
     float ListaryGanancia();
+//Agregar Alquiler, verifica que el vehiculo no se superponga
+    void AgregarItem(cAlquiler* item);
+
 #pragma endregion
 };
 

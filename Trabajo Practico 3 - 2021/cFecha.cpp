@@ -43,6 +43,17 @@ int cFecha::DiasEntreFechas(cFecha* inicio, cFecha* fin)
 	else throw new exception("Fechas incompletas");
 }
 
+bool cFecha::FechasSuperpuestas(cFecha* inicio1, cFecha* fin1, cFecha* inicio2, cFecha* fin2)
+{
+	if ((inicio2 > inicio1 && inicio2 < fin1) || inicio1 == inicio2)
+		return true;
+	if ((fin2<fin1 && fin2>inicio1) || fin1 == fin2)
+		return true;
+	if (inicio2<inicio1 && fin2>fin1)
+		return true;
+	return false;
+}
+
 
 void cFecha::SetHoy()
 {
@@ -60,11 +71,11 @@ bool cFecha::FechaCompleta()
 	return false;
 }
 
-string cFecha::to_string()
+string cFecha::To_string()
 {
 	return string();
 }
 
 void cFecha::ImprimirFecha() {
-	cout << to_string();
+	cout << To_string() << endl;;
 }
