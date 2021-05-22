@@ -11,6 +11,7 @@ public:
 #pragma region Constructor y Destructor
 	cAdicional(eTipoAdicional e, float costo, int cant = 0);
 #pragma endregion
+
 #pragma region Metodos
 // Calcula el Costo diario para todos los elementos de este tipo
 	float CalcularCostoDiarioTotal();

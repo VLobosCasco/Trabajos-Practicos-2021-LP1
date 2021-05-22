@@ -6,7 +6,7 @@ template<class T>
 class cListaT
 {
 protected:
-	T * *vector;
+	T** vector;
 	unsigned int CA, TAM;
 	void Redimensionalizar();
 
@@ -35,19 +35,12 @@ public:
 	unsigned int getItemPos(string clave);
 	unsigned int getCA();
 	unsigned int getTAM();
-	T** getvector();
 };
 
 template<class T>
 unsigned int cListaT<T>::getTAM()
 {
 	return TAM;
-}
-
-template<class T>
-inline T ** cListaT<T>::getvector()
-{
-	return vector;
 }
 
 template<class T>
