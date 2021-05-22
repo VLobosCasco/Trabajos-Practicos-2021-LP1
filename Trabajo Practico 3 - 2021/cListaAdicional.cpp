@@ -1,56 +1,69 @@
 #include "cListaAdicional.h"
 
 
-cListaAdicional::cListaAdicional(cVehiculo* v, float costo1, float costo2)
+cListaAdicional::cListaAdicional(cVehiculo* vehiculo, float costo_primer_adicional, float costo_segundo_adicional)
 {
+	adicional1 = NULL;
+	adicional2 = NULL;
+	CA = 0;
 	tarifa_diaria_adicionales = 0;
-	cMoto* aux_moto = dynamic_cast<cMoto*>(v);
+
+	cMoto* aux_moto = dynamic_cast<cMoto*>(vehiculo);
 	if (aux_moto != NULL)
 	{
-		if (costo1 == 0) costo1 = DEFAULT_CASCO;
-		adicional1 = new cAdicional(eTipoAdicional::Casco, costo1, 0);
-		adicional2 = NULL;
-		CA = 1;
+		setAdicionales(eTipoAdicional::Casco, costo_primer_adicional);
 		return;
 	}
-	cAuto* aux_auto = dynamic_cast<cAuto*>(v);
+
+	cAuto* aux_auto = dynamic_cast<cAuto*>(vehiculo);
 	if (aux_auto != NULL)
 	{
-		if (costo1 == 0) costo1 = DEFAULT_SILLA;
-		adicional1 = new cAdicional(eTipoAdicional::Silla_Ninos, costo1, 0);
-		adicional2 = NULL;
-		CA = 1;
+		setAdicionales(eTipoAdicional::Silla_Ninos, costo_primer_adicional);
 		return;
 	}
-	cCamioneta* aux_cam = dynamic_cast<cCamioneta*>(v);
+
+	cCamioneta* aux_cam = dynamic_cast<cCamioneta*>(vehiculo);
 	if (aux_cam != NULL)
 	{
-		if (costo1 == 0) costo1 = DEFAULT_SILLA;
-		adicional1 = new cAdicional(eTipoAdicional::Silla_Ninos, costo1, 0);
-		if (costo2 == 0) costo2 = DEFAULT_PORTAEQUIPAJE;
-		adicional2 = new cAdicional(eTipoAdicional::Portaequipaje, costo2, 0);
-		CA = 2;
+		setAdicionales(eTipoAdicional::Silla_Ninos, costo_primer_adicional, eTipoAdicional::Portaequipaje, costo_segundo_adicional);
 		return;
-
 	}
-	cTrafic* aux_t = dynamic_cast<cTrafic*>(v);
+
+	cTrafic* aux_t = dynamic_cast<cTrafic*>(vehiculo);
 	if (aux_t != NULL)
 	{
-		if (costo1 == 0) costo1 = DEFAULT_SILLA;
-		adicional1 = new cAdicional(eTipoAdicional::Silla_Ninos, costo1, 0);
-		if (costo2 == 0) costo2 = DEFAULT_ASIENTO;
-		adicional2 = new cAdicional(eTipoAdicional::Asientos_rebatibles, costo2, 0);
-		CA = 2;
+		setAdicionales(eTipoAdicional::Silla_Ninos, costo_primer_adicional, eTipoAdicional::Asientos_rebatibles, costo_segundo_adicional);
 		return;
 
 	}
 
 }
 
+
+void cListaAdicional::setAdicionales(eTipoAdicional primer_adicional, float primer_costo, eTipoAdicional segundo_adicional, float segundo_costo)
+{
+	if (primer_costo == 0) 
+		primer_costo = getCostoAdicionalDefault(primer_adicional);
+	adicional1 = new cAdicional(primer_adicional, primer_costo, 0);
+	CA = 1;
+
+	if (segundo_adicional != eTipoAdicional::NONE)
+	{
+		if (segundo_costo == 0) 
+			segundo_costo = getCostoAdicionalDefault(segundo_adicional);
+		adicional2 = new cAdicional(segundo_adicional, segundo_costo, 0);
+		CA = 2;
+	}
+	
+}
+
+
 cListaAdicional::~cListaAdicional()
 {
-	if (adicional1 != NULL) delete adicional1;
-	if (adicional2 != NULL) delete adicional2;
+	if (adicional1 != NULL) 
+		delete adicional1;
+	if (adicional2 != NULL) 
+		delete adicional2;
 }
 
 void cListaAdicional::ActualizarTarifaDiaria()

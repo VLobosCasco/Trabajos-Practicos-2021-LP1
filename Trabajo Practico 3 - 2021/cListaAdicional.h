@@ -21,7 +21,8 @@ public:
 
 #pragma region Constructor Destructor
 
-	cListaAdicional(cVehiculo* v, float costo1=0, float costo2=0);
+
+	cListaAdicional(cVehiculo* vehiculo, float costo_primer_adicional = 0, float costo_segundo_adicional = 0);
 
 	~cListaAdicional();
 
@@ -31,7 +32,10 @@ public:
 
 	void ActualizarTarifaDiaria();
 
-	void AgregarAdicional(eTipoAdicional e, int cant);
+	void AgregarAdicional(eTipoAdicional tipo_edicional, int cantidad);
+
+private:
+	void setAdicionales(eTipoAdicional primer_adicional, float primer_costo, eTipoAdicional segundo_adicional = eTipoAdicional::NONE, float segundo_costo = 0);
 
 #pragma endregion
 

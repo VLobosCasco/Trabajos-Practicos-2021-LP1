@@ -73,3 +73,25 @@ string CovertEstadoString(eTipoAdicional tipo)
 	return "";
 
 }
+
+float getCostoAdicionalDefault(eTipoAdicional adicional)
+{
+	switch (adicional)
+	{
+	case eTipoAdicional::Casco:
+		return DEFAULT_CASCO;
+		break;
+	case eTipoAdicional::Silla_Ninos:
+		return DEFAULT_SILLA;
+		break;
+	case eTipoAdicional::Portaequipaje:
+		return DEFAULT_PORTAEQUIPAJE;
+		break;
+	case eTipoAdicional::Asientos_rebatibles:
+		return DEFAULT_ASIENTO;
+		break;
+	default:
+		break;
+	}
+	return 0;
+}

@@ -12,17 +12,17 @@ private:
 public:
 #pragma region Constructor y Destructor
 
-	cEmpresa(string n, cListaT<cVehiculo>* v, cListaT<cCliente>* c, cListaAlquiler* a);
+	cEmpresa(string nombre, cListaT<cVehiculo>* lista_vehiculos, cListaT<cCliente>* lista_clientes, cListaAlquiler* lista_alquileres);
 
 #pragma endregion
 
 #pragma region Adquirir y Retirar de Circulación Vehiculos
 
 	//Agrega vehículo a la lista de vehículos
-	void AdquirirVehiculo(cVehiculo* v);
+	void AdquirirVehiculo(cVehiculo* vehiculo);
 
 	//Elimina vehículo de la lista de vehículos
-	void RetirardeCirculacion(cVehiculo* v);
+	void RetirardeCirculacion(cVehiculo* vehiculo);
 
 	//Busca al vehículo por patente y lo elimina de la lista de vehiculos
 	void RetirardeCirculacion(string patente);
@@ -32,16 +32,16 @@ public:
 #pragma region Mantenimiento
 
 	//Imprime los pasos de mantenimiento y cambia el estado a "en mantenimiento"
-	void Mantenimiento(cVehiculo* v);
+	void Mantenimiento(cVehiculo* vehiculo);
 
 	//Imprime los pasos de mantenimiento y cambia el estado a "en mantenimiento"
 	void Mantenimiento(string patente);
 
 	//Actualiza la fecha de mantenimiento y cambia el estado a libre
-	void TerminarMantenimiento(cVehiculo* v);
+	void TerminarMantenimiento(cVehiculo* vehiculo);
 
 	//Actualiza la fecha de mantenimiento y cambia el estado a libre
-	void TerminarMantenimiento(string p);
+	void TerminarMantenimiento(string patente);
 
 #pragma endregion
 

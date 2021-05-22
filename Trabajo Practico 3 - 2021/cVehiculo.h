@@ -19,7 +19,7 @@ protected:
 	eEstado estado;
 
 #pragma region Constructores y Destructores
-
+public:
 	//Constructor. Inicializa la fecha de último mantenimiento como la fecha actual.
 	cVehiculo(string patente_c, string chasis_c, string poliza_c, eColores color_c, int cant_pasajeros_c, cFecha* ult_mantenimiento = NULL);
 
@@ -59,6 +59,11 @@ protected:
 
 	//Devuelve la patente
 	string getpatente() const { return patente; }
+
+	//Devuelve la patente
+	eEstado getEstado() const { return estado; }
+
+	void setEstado(eEstado estado_nuevo) { estado = estado_nuevo; }
 
 #pragma endregion
 #pragma endregion

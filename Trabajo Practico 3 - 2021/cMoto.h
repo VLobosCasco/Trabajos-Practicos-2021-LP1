@@ -1,7 +1,7 @@
-#pragma once
-#include "cVehiculo.h"
 #include "cFecha.h"
 #include <iostream>
+#include "cVehiculo.h"
+
 class cMoto :
     protected cVehiculo
 {
@@ -37,5 +37,5 @@ private:
     string To_string();
 
     void Imprimir();
-};
 
+};

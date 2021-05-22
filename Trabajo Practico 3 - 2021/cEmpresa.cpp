@@ -1,18 +1,29 @@
 #include "cEmpresa.h"
 
-cEmpresa::cEmpresa(string n, cListaT<cVehiculo>* v, cListaT<cCliente>* c, cListaAlquiler* a):nombre(n)
+cEmpresa::cEmpresa(string nombre, cListaT<cVehiculo>* lista_vehiculos, cListaT<cCliente>* lista_clientes, cListaAlquiler* lista_alquileres) :nombre(nombre)
 {
-	vehiculos = v;
-	alquileres = a;
-	clientes = c;
+	if (lista_vehiculos != NULL)
+		vehiculos = lista_vehiculos;
+	else
+		vehiculos = new cListaT<cVehiculo>();
+
+	if (lista_clientes != NULL)
+		clientes = lista_clientes;
+	else
+		clientes = new cListaT<cCliente>();
+
+	if (lista_alquileres != NULL)
+		alquileres = lista_alquileres;
+	else
+		alquileres = new cListaAlquiler();
 }
 
-void cEmpresa::AdquirirVehiculo(cVehiculo* v)
+void cEmpresa::AdquirirVehiculo(cVehiculo* vehiculo)
 {
-	if (v != NULL)
+	if (vehiculo != NULL)
 	{
 		try {
-			vehiculos->AgregarItem(v);
+			vehiculos->AgregarItem(vehiculo);
 		}
 		catch (exception* ex) {
 			string err = ex->what();
@@ -24,11 +35,11 @@ void cEmpresa::AdquirirVehiculo(cVehiculo* v)
 		throw new exception("Error al retirar de circulación: No hay datos del vehículo");
 }
 
-void cEmpresa::RetirardeCirculacion(cVehiculo* v)
+void cEmpresa::RetirardeCirculacion(cVehiculo* vehiculo)
 {
-	if (v != NULL)
+	if (vehiculo != NULL)
 	{
-		v->estado = eEstado::Fuera_de_servicio;
+		vehiculo->setEstado(eEstado::Fuera_de_servicio);
 	}
 	else
 		throw new exception("Error al retirar de circulación: No hay datos del vehículo");
@@ -38,6 +49,7 @@ void cEmpresa::RetirardeCirculacion(cVehiculo* v)
 void cEmpresa::RetirardeCirculacion(string patente)
 {
 	cVehiculo* aux = NULL;
+
 	try {
 		aux = vehiculos->BuscarItem(patente);
 	}
@@ -47,19 +59,21 @@ void cEmpresa::RetirardeCirculacion(string patente)
 		e = new exception(("Error al buscar el vehiculo:" + err).c_str());
 		throw e;
 	}
-	aux->estado = eEstado::Fuera_de_servicio;
+
+	aux->setEstado(eEstado::Fuera_de_servicio);
 
 }
 
 void cEmpresa::Mantenimiento(cVehiculo* v)
 {
-	v->estado = eEstado::En_Mantenimiento;
+	v->setEstado(eEstado::En_Mantenimiento);
 	v->PasosMantenimiento();
 }
 
 void cEmpresa::Mantenimiento(string patente)
 {
 	cVehiculo* aux = NULL;
+
 	try {
 		aux = vehiculos->BuscarItem(patente);
 	}
@@ -69,15 +83,20 @@ void cEmpresa::Mantenimiento(string patente)
 		e = new exception(("Error al buscar el vehiculo:" + err).c_str());
 		throw e;
 	}
+
 	Mantenimiento(aux);
 }
 
 void cEmpresa::TerminarMantenimiento(cVehiculo* v) {
+
 	v->ActualizarMantenimiento();
-	v->estado = eEstado::Libre;
+	v->setEstado(eEstado::Libre);
+
 }
 void cEmpresa::TerminarMantenimiento(string p) {
+
 	cVehiculo* aux = NULL;
+
 	try {
 		aux = vehiculos->BuscarItem(p);
 	}
@@ -87,8 +106,10 @@ void cEmpresa::TerminarMantenimiento(string p) {
 		e = new exception(("Error al buscar el vehiculo:" + err).c_str());
 		throw e;
 	}
+
 	aux->ActualizarMantenimiento();
-	aux->estado = eEstado::Libre;
+	aux->setEstado(eEstado::Libre);
+
 }
 
 string cEmpresa::To_string()

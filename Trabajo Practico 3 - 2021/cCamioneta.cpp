@@ -2,9 +2,6 @@
 float cCamioneta::precio_base = 1250;
 float cCamioneta::precio_diario = 700;
 
-cCamioneta::cCamioneta(string patente_c, string chasis_c, string poliza_c, eColores color_c, int cant_pasaj_c) :cVehiculo(patente_c, chasis_c, poliza_c, color_c, cant_pasaj_c)
-{
-}
 cCamioneta::cCamioneta(string patente_c, string chasis_c, string poliza_c, eColores color_c, int cant_pasaj_c, cFecha* ult_mantenimiento) : cVehiculo(patente_c, chasis_c, poliza_c, color_c, cant_pasaj_c, ult_mantenimiento)
 {
 }
@@ -30,7 +27,7 @@ float cCamioneta::CalcularTarifa(cFecha& fecha_inicio, cFecha& fecha_fin)
 
 void cCamioneta::PasosMantenimiento()
 {
-	cout << " Pasos mantenimiento camioneta";
+	cout << "Pasos mantenimiento camioneta" << endl;
 	ActualizarMantenimiento();
 }
 

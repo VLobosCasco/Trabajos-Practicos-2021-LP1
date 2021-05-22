@@ -15,8 +15,9 @@ private:
 
 #pragma endregion
 
-#pragma region Constructor y Destructor
 
+#pragma region Constructor y Destructor
+public:
 	//Constructor por default, inicia en la fecha de hoy
 	cFecha();
 
@@ -27,7 +28,7 @@ private:
 
 #pragma region Metodos
 
-public:
+
 	//Calcula el numero de días entre dos fechas
 	static int DiasEntreFechas(cFecha* inicio, cFecha* fin);
 

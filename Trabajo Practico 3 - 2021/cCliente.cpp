@@ -2,7 +2,7 @@
 
 int cCliente::Cant_clientes = 0;
 
-cCliente::cCliente():IDCliente(to_string(Cant_clientes)), DNI(to_string(0))
+cCliente::cCliente() :IDCliente(to_string(Cant_clientes)), DNI(to_string(0))
 {
 	Cant_clientes++;
 	NombreCompleto = "Sin datos";
@@ -22,7 +22,7 @@ cCliente::cCliente(string dni, string nombreapellido, int dia, int mes, int anio
 {
 	Cant_clientes++;
 	NombreCompleto = nombreapellido;
-	Fecha_de_Nacimiento = new cFecha(dia,mes,anio);
+	Fecha_de_Nacimiento = new cFecha(dia, mes, anio);
 	TarjetadeCredito = tarj_cred;
 }
 
@@ -32,12 +32,12 @@ cCliente::~cCliente()
 		delete Fecha_de_Nacimiento;
 }
 
-string cCliente::getclave()
+string cCliente::getclave() const
 {
 	return IDCliente;
 }
 
-string cCliente::getID()
+string cCliente::getID() const
 {
 	return IDCliente;
 }

@@ -3,9 +3,6 @@
 float cTrafic::precio_base = 2250;
 float cTrafic::precio_diario = 1200;
 
-cTrafic::cTrafic(string patente_c, string chasis_c, string poliza_c, eColores color_c, int cant_pasaj_c) :cVehiculo(patente_c, chasis_c, poliza_c, color_c, cant_pasaj_c)
-{
-}
 cTrafic::cTrafic(string patente_c, string chasis_c, string poliza_c, eColores color_c, int cant_pasaj_c, cFecha* ult_mantenimiento) : cVehiculo(patente_c, chasis_c, poliza_c, color_c, cant_pasaj_c, ult_mantenimiento)
 {
 }
