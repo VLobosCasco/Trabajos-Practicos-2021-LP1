@@ -29,7 +29,11 @@ public:
 
 #pragma region Metodos
 
+	//Actualiza la fecha de mantenimiento
 	void ActualizarMantenimiento();
+
+	//Modifica la cantidad de plazas, si el número es <0 las quita, si es >0 las agrega
+	void ModificarAsientos(int cantidad);
 
 #pragma region Métodos virtuales
 

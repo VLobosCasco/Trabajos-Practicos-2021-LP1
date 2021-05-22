@@ -18,6 +18,11 @@ void cVehiculo::ActualizarMantenimiento() {
 	Ultimo_Mantenimiento->SetHoy();
 }
 
+void cVehiculo::ModificarAsientos(int cantidad)
+{
+	cant_pasajeros =+ cantidad;
+}
+
 string cVehiculo::To_string()
 {
 	return

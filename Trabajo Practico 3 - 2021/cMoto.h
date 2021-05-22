@@ -2,13 +2,14 @@
 #include "cVehiculo.h"
 
 class cMoto :
-    protected cVehiculo
+   public cVehiculo
 {
 private:
     static float precio_base;
     static float precio_diario;
 
 #pragma region Constructor
+public:
 
     cMoto(string patente_c, string chasis_c, string poliza_c, eColores color_c, cFecha* ult_mantenimiento = NULL);
 

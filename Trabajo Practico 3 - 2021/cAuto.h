@@ -3,14 +3,14 @@
 #include <iostream>
 
 class cAuto :
-    protected cVehiculo
+    public cVehiculo
 {
 private:
     static float precio_base;
     static float precio_diario;
 
 #pragma region Constructor
-
+public:
     cAuto(string patente_c, string chasis_c, string poliza_c, eColores color_c, int cant_pasaj_c, cFecha* ult_mantenimiento=NULL);
 
 #pragma endregion

@@ -28,7 +28,9 @@ public:
 
 	void ActualizarTarifaDiaria();
 
-	void AgregarAdicional(eTipoAdicional tipo_edicional, int cantidad);
+	void AgregarAdicional(eTipoAdicional tipoadicional, int cantidad);
+
+	void QuitarAdicional(eTipoAdicional tipoadicional, int cantidad);
 
 private:
 	void setAdicionales(eTipoAdicional primer_adicional, float primer_costo, eTipoAdicional segundo_adicional = eTipoAdicional::NONE, float segundo_costo = 0);

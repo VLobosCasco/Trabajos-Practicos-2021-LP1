@@ -20,8 +20,8 @@ public:
 	// Calcula el Costo diario para todos los elementos de este tipo
 	float CalcularCostoDiarioTotal();
 
-	//Aumenta la cantidad
-	void AgregarElementos(int c = 1);
+	//Modifica la cantidad. Aumenta la cantidad de cantidad>0, la reduce si cantidad<0
+	void ModificarElementos(int cant = 1);
 
 #pragma endregion
 };

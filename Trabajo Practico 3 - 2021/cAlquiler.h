@@ -68,6 +68,8 @@ public:
 	//Verifica que el vehículo se encuentre disponible entre las dos fechas (compara las fechas parámetro con las fechas del alquiler)
 	bool VerificarDisponibilidad(cFecha* inicio, cFecha* fin);
 
+	//Recibe el tipo de Adicional a eliminar, y la cantidad que se quieren eliminar
+	void QuitarAdicional(eTipoAdicional tipoAdicional, int cant);
 
 #pragma endregion
 

@@ -74,11 +74,11 @@ void cListaAdicional::ActualizarTarifaDiaria()
 	tarifa_diaria_adicionales = adicional1->CalcularCostoDiarioTotal() + adicional2->CalcularCostoDiarioTotal();
 }
 
-void cListaAdicional::AgregarAdicional(eTipoAdicional e, int cant)
+void cListaAdicional::AgregarAdicional(eTipoAdicional tipoadicional, int cant)
 {
-	if (adicional1->elemento == e) {
+	if (adicional1->elemento == tipoadicional) {
 		try {
-			adicional1->AgregarElementos(cant);
+			adicional1->ModificarElementos(cant);
 			ActualizarTarifaDiaria();
 			return;
 		}
@@ -90,9 +90,9 @@ void cListaAdicional::AgregarAdicional(eTipoAdicional e, int cant)
 			throw ex;
 		}
 	}
-	if (adicional2->elemento == e) {
+	if (adicional2->elemento == tipoadicional) {
 		try {
-			adicional2->AgregarElementos(cant);
+			adicional2->ModificarElementos(cant);
 			ActualizarTarifaDiaria();
 			return;
 		}
@@ -105,4 +105,38 @@ void cListaAdicional::AgregarAdicional(eTipoAdicional e, int cant)
 		}
 	}
 	throw new exception("No es posible agregar elementos de ese tipo en este alquiler");
+}
+
+void cListaAdicional::QuitarAdicional(eTipoAdicional tipoadicional, int cantidad)
+{
+	if (adicional1->elemento == tipoadicional) {
+		try {
+			adicional1->ModificarElementos(-cantidad);
+			ActualizarTarifaDiaria();
+			return;
+		}
+		catch (exception* ex)
+		{
+			string err = ex->what();
+			delete ex;
+			ex = new exception(("Error al quitar elementos: " + err).c_str());
+			throw ex;
+		}
+	}
+	if (adicional2->elemento == tipoadicional) 
+	{
+		try {
+			adicional2->ModificarElementos(cantidad);
+			ActualizarTarifaDiaria();
+			return;
+		}
+		catch (exception* ex)
+		{
+			string err = ex->what();
+			delete ex;
+			ex = new exception(("Error al quitar elementos: " + err).c_str());
+			throw ex;
+		}
+	}
+	throw new exception("No es posible quitar elementos de ese tipo en este alquiler");
 }
