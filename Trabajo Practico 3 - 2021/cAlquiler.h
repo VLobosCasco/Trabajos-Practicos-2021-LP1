@@ -65,10 +65,19 @@ public:
 	//Agregar Adicional. Recibe el tipo de adicional y la cantidad, por default agrega 1
 	void AgregarAdicional(eTipoAdicional tipoAdicional, int cant = 1);
 
-	//Verifica que el vehículo se encuentre disponible entre las dos fechas
+	//Verifica que el vehículo se encuentre disponible entre las dos fechas (compara las fechas parámetro con las fechas del alquiler)
 	bool VerificarDisponibilidad(cFecha* inicio, cFecha* fin);
 
 
+#pragma endregion
+
+#pragma region Sobrecarga
+	bool operator ==(string otra_clave) {
+		return this->getclave() == otra_clave;
+	}
+	bool operator !=(string otra_clave) {
+		return this->getclave() != otra_clave;
+	}
 #pragma endregion
 };
 

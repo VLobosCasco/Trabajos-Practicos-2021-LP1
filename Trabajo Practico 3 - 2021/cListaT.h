@@ -1,6 +1,7 @@
 ﻿#pragma once
 #define NMAX 20
 #include <string>
+
 using namespace std;
 template<class T>
 class cListaT
@@ -25,6 +26,10 @@ public:
 	void Eliminar(string clave);
 	void Eliminar(const T *item);
 	void operator-(const T *item);
+
+	bool operator==(T* item, string clave);
+	
+
 	void Eliminar(unsigned int pos);
 
 	void Listar();
@@ -36,6 +41,7 @@ public:
 	unsigned int getItemPos(string clave);
 	unsigned int getCA();
 	unsigned int getTAM();
+	
 };
 
 template<class T>
@@ -53,9 +59,12 @@ unsigned int cListaT<T>::getCA()
 template<class T>
 void cListaT<T>::Redimensionalizar()
 {
+	//defino nuevo tamaño
 	TAM += 10;
+	//creo nuevo vector auxiliar
 	T** aux = new T * [TAM];
 
+	//copio los datos al nuevo vector y pongo el resto en NULL
 	for (int i = 0; i < TAM; i++) 
 	{
 		if (i < CA)
@@ -63,8 +72,10 @@ void cListaT<T>::Redimensionalizar()
 		aux[i] = NULL;
 	}
 
+	//borro el vector anterior
 	delete[] vector;
 
+	//guardo mi nuevo vector
 	vector = aux;
 
 }
@@ -190,7 +201,7 @@ T* cListaT<T>::BuscarItem(string clave)
 {
 	for (unsigned int i = 0; i < CA; i++)
 	{
-		if (vector[i]->getclave() == clave)	//SOBRECARGA!!!!!!
+		if (vector[i]== clave)	
 			return vector[i];
 	}
 	return NULL;
@@ -210,8 +221,7 @@ unsigned int cListaT<T>::getItemPos(string clave)
 {
 	for (unsigned int i = 0; i < CA; i++)
 	{
-		string comp = vector[i]->getclave();
-		if (comp == clave)
+		if (vector[i] == clave)
 			return i;
 	}
 	return -1;
@@ -235,3 +245,9 @@ void cListaT<T>::operator -(const T *item)
 {
 	Eliminar(item);
 }
+
+/*template<class T>
+bool cListaT<T>::operator==(T* item, string clave) {
+
+}*/
+

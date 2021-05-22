@@ -75,6 +75,12 @@ public:
 	bool operator !=(cVehiculo* otro) {
 		return this->getclave() != otro->getclave();
 	}
+	bool operator ==(string otra_clave) {
+		return this->getclave() == otra_clave;
+	}
+	bool operator !=(string otra_clave) {
+		return this->getclave() != otra_clave;
+	}
 #pragma endregion
 };
 

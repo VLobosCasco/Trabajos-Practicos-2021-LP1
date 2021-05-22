@@ -84,7 +84,7 @@ void cAlquiler::AgregarAdicional(eTipoAdicional tipoAdicional, int cant)
 
 bool cAlquiler::VerificarDisponibilidad(cFecha* inicio, cFecha* fin)
 {
-
-	return false;
+	bool aux = cFecha::FechasSuperpuestas(fecha_inicio, fecha_fin, inicio, fin);
+	return aux;
 }
 

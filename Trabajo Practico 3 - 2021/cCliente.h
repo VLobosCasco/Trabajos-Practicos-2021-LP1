@@ -48,5 +48,16 @@ public:
 	void Imprimir();
 
 #pragma endregion
+
+#pragma region Sobrecarga
+
+	bool operator ==(string otra_clave) {
+		return this->getclave() == otra_clave;
+	}
+
+	bool operator !=(string otra_clave) {
+		return this->getclave() != otra_clave;
+	}
+#pragma endregion
 };
 
