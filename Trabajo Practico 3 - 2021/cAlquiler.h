@@ -1,10 +1,7 @@
 #pragma once
 #include <iostream>
 #include "cFecha.h"
-#include "cAuto.h"
-#include "cMoto.h"
-#include "cCamioneta.h"
-#include "cTrafic.h"
+#include "cVehiculo.h"
 #include "cCliente.h"
 #include "cListaAdicional.h"
 #include "cListaT.h"
@@ -29,7 +26,7 @@ public:
 
 #pragma region Constructor y Destructor
 
-	cAlquiler(cCliente* c, cVehiculo* v, cFecha* fi, cFecha* ff, float costo1 = 0, float costo2 = 0);
+	cAlquiler(cCliente* cliente, cVehiculo* vehiculo, cFecha* fecha_inicio, cFecha* fecha_final, float costo1 = 0, float costo2 = 0);
 	~cAlquiler();
 
 #pragma endregion
@@ -66,7 +63,7 @@ public:
 	void ActualizarMontoTotal();
 
 	//Agregar Adicional. Recibe el tipo de adicional y la cantidad, por default agrega 1
-	void AgregarAdicional(eTipoAdicional e, int cant = 1);
+	void AgregarAdicional(eTipoAdicional tipoAdicional, int cant = 1);
 
 	//Verifica que el vehículo se encuentre disponible entre las dos fechas
 	bool VerificarDisponibilidad(cFecha* inicio, cFecha* fin);

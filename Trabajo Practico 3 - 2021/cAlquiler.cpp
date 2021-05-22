@@ -1,17 +1,22 @@
 #include "cAlquiler.h"
 
+#include "cAuto.h"
+#include "cMoto.h"
+#include "cCamioneta.h"
+#include "cTrafic.h"
+
 int cAlquiler::Cont_alquiler = 0;
 
-cAlquiler::cAlquiler(cCliente* c, cVehiculo* v, cFecha* fi, cFecha* ff, float costo1, float costo2) :IDAlquiler(std::to_string(Cont_alquiler))
+cAlquiler::cAlquiler(cCliente* cliente, cVehiculo* vehiculo, cFecha* fecha_inicio, cFecha* fecha_final, float costo1, float costo2) :IDAlquiler(std::to_string(Cont_alquiler))
 {
-	cliente = c;
-	if (v->getEstado() == eEstado::Libre)
-		vehiculo = v;
+	cliente = cliente;
+	if (vehiculo->getEstado() == eEstado::Libre)
+		vehiculo = vehiculo;
 	else
 		throw new exception("El vehículo no se encuentra disponible");
-	fecha_inicio = fi;
-	fecha_fin = ff;
-	adicionales = new cListaAdicional(v, costo1, costo2);
+	fecha_inicio = fecha_inicio;
+	fecha_fin = fecha_final;
+	adicionales = new cListaAdicional(vehiculo, costo1, costo2);
 	ActualizarMontoTotal();
 	Cont_alquiler++;
 
@@ -66,10 +71,10 @@ void cAlquiler::ActualizarMontoTotal()
 	monto_total = vehiculo->CalcularTarifa(*fecha_inicio, *fecha_fin) + adicionales->tarifa_diaria_adicionales * cFecha::DiasEntreFechas(fecha_inicio, fecha_fin);
 }
 
-void cAlquiler::AgregarAdicional(eTipoAdicional e, int cant)
+void cAlquiler::AgregarAdicional(eTipoAdicional tipoAdicional, int cant)
 {
 	try {
-		adicionales->AgregarAdicional(e, cant);
+		adicionales->AgregarAdicional(tipoAdicional, cant);
 		ActualizarMontoTotal();
 	}
 	catch (exception* ex) {

@@ -1,5 +1,8 @@
 #include "cListaAdicional.h"
-
+#include "cMoto.h"
+#include "cAuto.h"
+#include "cCamioneta.h"
+#include "cTrafic.h"
 
 cListaAdicional::cListaAdicional(cVehiculo* vehiculo, float costo_primer_adicional, float costo_segundo_adicional)
 {

@@ -1,10 +1,6 @@
 #pragma once
 #include "cAdicional.h"
 #include "cVehiculo.h"
-#include "cMoto.h"
-#include "cAuto.h"
-#include "cCamioneta.h"
-#include "cTrafic.h"
 #include "Definiciones.h"
 #include <iostream>
 
