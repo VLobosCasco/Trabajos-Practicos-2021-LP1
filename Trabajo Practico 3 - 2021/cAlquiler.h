@@ -14,7 +14,7 @@ using namespace std;
 class cListaAlquiler;
 class cAlquiler
 {
-public:
+private:
 	const string IDAlquiler;
 	cCliente* cliente;
 	cVehiculo* vehiculo;
@@ -22,30 +22,45 @@ public:
 	cFecha* fecha_inicio;
 	cFecha* fecha_fin;
 	float monto_total;
-private:
+
 	static int Cont_alquiler;
+
 public:
+
 #pragma region Constructor y Destructor
-	cAlquiler(cCliente * c, cVehiculo * v, cFecha * fi, cFecha* ff, float costo1=0, float costo2=0);
+
+	cAlquiler(cCliente* c, cVehiculo* v, cFecha* fi, cFecha* ff, float costo1 = 0, float costo2 = 0);
 	~cAlquiler();
+
 #pragma endregion
+
 #pragma region To_string e Imprimir
+
 	string To_string();
 	void Imprimir();
+
 #pragma endregion
+
 #pragma region Getters y Setters
-//devuelve IDAlquiler (clave)
+
+	//devuelve IDAlquiler (clave)
 	string getclave(); //lo necesito para la lista
-//devuelve IDAlquiler
+	//devuelve IDAlquiler
 	string getID();
+
 #pragma endregion
+
 #pragma region Métodos
-//Calcula el monto total y lo actualiza
+
+	//Calcula el monto total y lo actualiza
 	void ActualizarMontoTotal();
-//Agregar Adicional. Recibe el tipo de adicional y la cantidad, por default agrega 1
-	void AgregarAdicional(eTipoAdicional e, int cant =1);
-//Verifica que el vehículo se encuentre disponible entre las dos fechas
+
+	//Agregar Adicional. Recibe el tipo de adicional y la cantidad, por default agrega 1
+	void AgregarAdicional(eTipoAdicional e, int cant = 1);
+
+	//Verifica que el vehículo se encuentre disponible entre las dos fechas
 	bool VerificarDisponibilidad(cFecha* inicio, cFecha* fin);
+
 #pragma endregion
 };
 

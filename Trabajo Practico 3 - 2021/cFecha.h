@@ -8,33 +8,48 @@
 using namespace std;
 class cFecha
 {
-public:
+private:
 #pragma region Atributos
+
 	tm fecha;
+
 #pragma endregion
 
 #pragma region Constructor y Destructor
-//Constructor por default, inicia en la fecha de hoy
+
+	//Constructor por default, inicia en la fecha de hoy
 	cFecha();
-//Constructor inicia en dia, mes, año
+
+	//Constructor inicia en dia, mes, año
 	cFecha(int d, int m, int a);
+
 #pragma endregion
+
 #pragma region Metodos
+
 public:
-//Calcula el numero de días entre dos fechas
+	//Calcula el numero de días entre dos fechas
 	static int DiasEntreFechas(cFecha* inicio, cFecha* fin);
-//Devuelve si las fechas se superponen
+
+	//Devuelve si las fechas se superponen
 	static bool FechasSuperpuestas(cFecha* inicio1, cFecha* fin1, cFecha* inicio2, cFecha* fin2);
-//Cambia la fecha a la fecha actual
+
+	//Cambia la fecha a la fecha actual
 	void SetHoy();
-//Verifica que la fecha esté completa
+
+	//Verifica que la fecha esté completa
 	bool FechaCompleta();
-//Devuelve la fecha actual en forma de string
+
+	//Devuelve la fecha actual en forma de string
 	string To_string();
-// Imprime fecha
+
+	// Imprime fecha
 	void ImprimirFecha();
+
 #pragma endregion
+
 #pragma region Sobrecarga de Operadores
+
 	bool operator<(cFecha& otra) {
 		time_t aux_this = mktime(&(this->fecha));
 		time_t aux_otra = mktime(&(otra.fecha));
@@ -56,6 +71,7 @@ public:
 	bool operator!=(cFecha& otra) {
 		return !(*this == otra);
 	}
+
 #pragma endregion
 };
 

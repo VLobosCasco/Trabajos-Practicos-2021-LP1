@@ -49,3 +49,27 @@ string CovertTipoAdicionalString(eTipoAdicional tipo)
 		break;
 	}
 }
+
+string CovertEstadoString(eTipoAdicional tipo)
+{
+	switch (tipo)
+	{
+	case eTipoAdicional::Casco:
+		return "Casco";
+		break;
+	case eTipoAdicional::Silla_Ninos:
+		return "Silla de ninos";
+		break;
+	case eTipoAdicional::Portaequipaje:
+		return "Portaequipaje";
+		break;
+	case eTipoAdicional::Asientos_rebatibles:
+		return "Asientos rebatibles";
+		break;
+	default:
+		break;
+	}
+
+	return "";
+
+}
