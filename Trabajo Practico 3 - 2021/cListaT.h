@@ -1,7 +1,7 @@
 ﻿#pragma once
 #define NMAX 20
 #include <string>
-
+#include <iostream>
 using namespace std;
 template<class T>
 class cListaT
@@ -36,7 +36,7 @@ public:
 	T* BuscarItem(string clave);
 	T* operator [](unsigned int pos);
 	T* getItem(unsigned int pos);
-
+	string To_String();
 
 	unsigned int getItemPos(string clave);
 	unsigned int getCA();
@@ -217,6 +217,17 @@ T* cListaT<T>::getItem(unsigned int pos)
 }
 
 template<class T>
+inline string cListaT<T>::To_String()
+{
+	string Total;
+	for (unsigned int i = 0; i < CA; i++)
+	{
+		Total+= vector[i]->To_string();// imprimir
+	}
+	return Total;
+}
+
+template<class T>
 unsigned int cListaT<T>::getItemPos(string clave)
 {
 	for (unsigned int i = 0; i < CA; i++)
@@ -244,6 +255,12 @@ template<class T>
 void cListaT<T>::operator -(const T *item) 
 {
 	Eliminar(item);
+}
+
+template <class T>
+
+void operator<<(ostream& o, cListaT<T>& object) {
+	o << object.Listar() << endl;
 }
 
 /*template<class T>

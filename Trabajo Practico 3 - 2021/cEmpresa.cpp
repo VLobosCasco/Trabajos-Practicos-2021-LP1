@@ -114,7 +114,10 @@ void cEmpresa::TerminarMantenimiento(string p) {
 
 string cEmpresa::To_string()
 {
-	return string();
+	return "Nombre: " + nombre + "\n" +
+		"Vehiculos: " + vehiculos->To_String() + "\n" +
+		"Alquileres: " + alquileres->To_String() + "\n" +
+		"Clientes: " + clientes->To_String();
 }
 
 void cEmpresa::Imprimir()
