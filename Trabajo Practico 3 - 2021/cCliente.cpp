@@ -44,7 +44,12 @@ string cCliente::getID() const
 
 string cCliente::To_string()
 {
-	return string();
+	return "ID: " + IDCliente + "\n" +
+		"DNI: " + DNI + "\n" +
+		"Nombre Completo: " + NombreCompleto + "\n" +
+		"Fecha de Nacimiento: " + Fecha_de_Nacimiento->To_string();
+
+
 }
 
 void cCliente::Imprimir()

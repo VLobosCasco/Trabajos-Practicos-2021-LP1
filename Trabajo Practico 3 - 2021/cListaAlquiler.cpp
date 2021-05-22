@@ -23,3 +23,13 @@ void cListaAlquiler::AgregarItem(cAlquiler* item)
 		
 
 }
+
+string cListaAlquiler::To_String()
+{
+	string Total;
+	for (unsigned int i = 0; i < CA; i++)
+	{
+		Total += vector[i]->To_string();// imprimir
+	}
+	return Total;
+}

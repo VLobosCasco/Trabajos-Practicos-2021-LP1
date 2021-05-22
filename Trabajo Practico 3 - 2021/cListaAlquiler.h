@@ -17,6 +17,10 @@ public:
 
 	//Agregar Alquiler, verifica que el vehiculo no se superponga
 	void AgregarItem(cAlquiler* item);
+	
+	//To String
+
+	string To_String();
 
 #pragma endregion
 };

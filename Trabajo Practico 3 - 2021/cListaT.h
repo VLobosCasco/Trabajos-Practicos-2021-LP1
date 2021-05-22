@@ -31,7 +31,7 @@ public:
 	T* BuscarItem(string clave);
 	T* operator [](unsigned int pos);
 	T* getItem(unsigned int pos);
-
+	string To_String();
 
 	unsigned int getItemPos(string clave);
 	unsigned int getCA();
@@ -203,6 +203,17 @@ T* cListaT<T>::getItem(unsigned int pos)
 		return vector[pos];
 	else 
 		throw new exception("Posición inválida");
+}
+
+template<class T>
+inline string cListaT<T>::To_String()
+{
+	string Total;
+	for (unsigned int i = 0; i < CA; i++)
+	{
+		Total+= vector[i]->To_string();// imprimir
+	}
+	return Total;
 }
 
 template<class T>
