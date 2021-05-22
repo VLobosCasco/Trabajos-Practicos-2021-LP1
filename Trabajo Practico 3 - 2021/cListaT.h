@@ -37,6 +37,7 @@ public:
 	unsigned int getItemPos(string clave);
 	unsigned int getCA();
 	unsigned int getTAM();
+	friend ostream& operator<<(ostream& os, const cListaT<T>& Lista);
 };
 
 template<class T>
@@ -207,7 +208,7 @@ T* cListaT<T>::getItem(unsigned int pos)
 }
 
 template<class T>
-inline string cListaT<T>::To_String()
+string cListaT<T>::To_String()
 {
 	string Total;
 	for (unsigned int i = 0; i < CA; i++)
@@ -250,6 +251,8 @@ void cListaT<T>::operator -(const T *item)
 
 template <class T>
 
-void operator<<(ostream& o, cListaT<T>& object) {
-	o << object.Listar() << endl;
+void operator<<(ostream& os, const cListaT<T>& Lista)
+{
+	for(int i = 0; i < Lista.CA ; i++)
+		os << Lista.vector[i].To_string() << endl;
 }
