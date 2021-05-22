@@ -1,5 +1,5 @@
 ﻿#pragma once
-#define NMAX 10000
+#define NMAX 100
 #include <string>
 using namespace std;
 template<class T>
@@ -127,15 +127,9 @@ T* cListaT<T>::Quitar(string clave) {
 
 	unsigned int pos = getItemPos(clave);
 	T* aux = NULL;
-	try {
-		aux = QuitarenPos(pos);
-	}
-	catch (exception* ex) {
-		string error = ex->what();
-		delete ex;
-		ex = new exception(("Error en Quitar: " + error).c_str());
-		throw ex;
-	}
+	
+	aux = QuitarenPos(pos);
+	
 	return aux;
 
 }
@@ -143,17 +137,12 @@ T* cListaT<T>::Quitar(string clave) {
 template<class T>
 T* cListaT<T>::Quitar(const T *item) {
 	unsigned int pos = getItemPos(item->getclave());
-	if (pos >= CA)return NULL;
+	
+	if (pos >= CA) return NULL;
 	T* aux = NULL;
-	try {
+
 		aux = QuitarenPos(pos);
-	}
-	catch (exception* ex) {
-		string error = ex->what();
-		delete ex;
-		ex = new exception(("Error en Quitar: " + error).c_str());
-		throw ex;
-	}
+	
 	return aux;
 }
 
@@ -180,45 +169,21 @@ template<class T>
 void cListaT<T>::Eliminar(string clave) {
 
 	unsigned int pos = getItemPos(clave);
-	try {
-		Eliminar(pos);
-		}
-	catch (exception* ex) {
-		string error = ex->what();
-		delete ex;
-		ex = new exception(("Error al obtener la posición del item: " + error).c_str());
-		throw ex;
-	}
-
-
+	
+	Eliminar(pos);
 }
 
 template<class T>
 void cListaT<T>::Eliminar(const T *item) {
 
-	try {
-		Eliminar(item->getclave());
-	}
-	catch (exception* e)
-	{
-		throw e;
-	}
+	Eliminar(item->getclave());
 }
 
 template<class T>
 void cListaT<T>::Eliminar(unsigned int pos) {
 	
-	T* dato = NULL;
-	try {
-		dato=QuitarenPos(pos);
-	}
-	catch (exception* e) {
-		string error = e->what();
-		delete e;
-		e = new exception(("Error en Quitar pos: " + error).c_str());
-		throw e;
-	}
-
+	T* dato=QuitarenPos(pos);
+	
 	delete dato;
 }
 
@@ -261,44 +226,24 @@ unsigned int cListaT<T>::getItemPos(string clave)
 
 template <class T>
 void cListaT<T>::operator+(T * item) {
-	try {
-		AgregarItem(item);
-	}
-	catch (exception* ex) {
-		string error = ex->what();
-		delete ex;
-		ex = new exception(("Error en Agregar: " + error).c_str());
-		throw ex;
-	}
+
+	AgregarItem(item);
+
 }
 
 template<class T>
 inline T * cListaT<T>::operator[](unsigned int pos)
 {
 	T* aux = NULL;
-	try{
-		aux = getItem(pos);
-	}
-	catch (exception* ex) {
-		string error = ex->what();
-		delete ex;
-		ex = new exception(("Error en GetItem: " + error).c_str());
-		throw ex;
-	}
+
+	aux = getItem(pos);
+	
 	return aux;
 }
 
 template<class T>
 void cListaT<T>::operator -(const T *item) {
-	try {
+	
 		Eliminar(item);
-	}
-	catch (exception* ex)
-	{
-		string error = ex->what();
-		delete ex;
-		ex = new exception(("Error en Eliminar:" + error).c_str());
-		throw ex;
-
-	}
+	
 }

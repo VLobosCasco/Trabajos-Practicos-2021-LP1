@@ -33,15 +33,32 @@ void cAlquiler::Imprimir()
 	cout << To_string() << endl;
 }
 
-string cAlquiler::getclave()
+string cAlquiler::getclave() const
 {
 	return IDAlquiler;
 }
 
-string cAlquiler::getID()
+string cAlquiler::getID() const
 {
 	return IDAlquiler;
 }
+
+cVehiculo* cAlquiler::getvehiculo() const
+{
+	return vehiculo;
+}
+
+cFecha* cAlquiler::getfechainicio() const
+{
+	return fecha_inicio;
+}
+
+cFecha* cAlquiler::getfechafin() const
+{
+	return fecha_fin;
+}
+
+
 
 void cAlquiler::ActualizarMontoTotal()
 {

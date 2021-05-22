@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
 #include "cFecha.h"
-#include "cMoto.h"
 #include "cAuto.h"
+#include "cMoto.h"
 #include "cCamioneta.h"
 #include "cTrafic.h"
 #include "cCliente.h"
@@ -44,9 +44,19 @@ public:
 #pragma region Getters y Setters
 
 	//devuelve IDAlquiler (clave)
-	string getclave(); //lo necesito para la lista
+	string getclave()const; //lo necesito para la lista
+
 	//devuelve IDAlquiler
-	string getID();
+	string getID() const ;
+
+	//devuelve Vehiculo
+	cVehiculo* getvehiculo() const;
+
+	//devuelve la fecha de inicio
+	cFecha* getfechainicio() const;
+
+	//devuelve la fecha de fin
+	cFecha* getfechafin() const;
 
 #pragma endregion
 

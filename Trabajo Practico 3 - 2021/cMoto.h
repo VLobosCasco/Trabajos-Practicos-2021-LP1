@@ -1,4 +1,3 @@
-#include "cFecha.h"
 #include <iostream>
 #include "cVehiculo.h"
 
@@ -37,5 +36,5 @@ private:
     string To_string();
 
     void Imprimir();
-
+#pragma endregion
 };

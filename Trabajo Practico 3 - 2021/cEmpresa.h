@@ -21,10 +21,10 @@ public:
 	//Agrega vehículo a la lista de vehículos
 	void AdquirirVehiculo(cVehiculo* vehiculo);
 
-	//Elimina vehículo de la lista de vehículos
+	//Cambia estado del vehículo a fuera de circulación
 	void RetirardeCirculacion(cVehiculo* vehiculo);
 
-	//Busca al vehículo por patente y lo elimina de la lista de vehiculos
+	//Busca al vehículo por patente y cambia estado del vehículo a fuera de circulación
 	void RetirardeCirculacion(string patente);
 
 #pragma endregion
