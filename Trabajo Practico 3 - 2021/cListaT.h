@@ -20,12 +20,11 @@ public:
 	void operator+(T * item);
 
 	T* Quitar(string clave);
-	T* Quitar(const T *item);
 	T* QuitarenPos(unsigned int pos);
 
 	void Eliminar(string clave);
-	void Eliminar(const T *item);
-	void operator-(const T *item);
+	void operator-(string clave);
+
 	void Eliminar(unsigned int pos);
 	
 	void Listar();
@@ -38,6 +37,9 @@ public:
 	unsigned int getCA();
 	unsigned int getTAM();
 };
+
+template <class T>
+void operator<<(ostream& os, const cListaT<T>& Lista);
 
 template<class T>
 unsigned int cListaT<T>::getTAM()
@@ -100,7 +102,6 @@ cListaT<T>::~cListaT()
 					delete vector[i];
 			}
 		}
-
 		delete[] vector;
 	}
 }
@@ -138,22 +139,9 @@ T* cListaT<T>::Quitar(string clave)
 }
 
 template<class T>
-T* cListaT<T>::Quitar(const T *item) 
-{
-	unsigned int pos = getItemPos(item->getclave());
-	if (pos >= CA)
-		return NULL;
-
-	T* aux = NULL;
-	aux = QuitarenPos(pos);
-
-	return aux;
-}
-
-template<class T>
 T* cListaT<T>::QuitarenPos(unsigned int pos) {
 
-	if (pos >= CA||pos<0)
+	if (pos >= CA || pos < 0)
 		throw new exception("Posicion invalida");
 
 	T *aux = vector[pos];
@@ -175,11 +163,6 @@ void cListaT<T>::Eliminar(string clave) {
 	Eliminar(pos);
 }
 
-template<class T>
-void cListaT<T>::Eliminar(const T *item) {
-
-	Eliminar(item->getclave());
-}
 
 template<class T>
 void cListaT<T>::Eliminar(unsigned int pos) {
@@ -227,7 +210,7 @@ unsigned int cListaT<T>::getItemPos(string clave)
 {
 	for (unsigned int i = 0; i < CA; i++)
 	{
-		if (vector[i] == clave)
+		if (*(vector[i]) == clave)
 			return i;
 	}
 	return -1;
@@ -235,7 +218,7 @@ unsigned int cListaT<T>::getItemPos(string clave)
 
 
 template <class T>
-void cListaT<T>::operator+(T * item) 
+void cListaT<T>::operator+(T* item) 
 {
 	AgregarItem(item);
 }
@@ -247,19 +230,20 @@ inline T * cListaT<T>::operator[](unsigned int pos)
 }
 
 template<class T>
-void cListaT<T>::operator -(const T *item) 
+void cListaT<T>::operator-(string clave) 
 {
-	Eliminar(item);
+	Eliminar(clave);
 }
 
 template <class T>
 ostream& operator<<(ostream& os, const cListaT<T>& Lista)
-{
+void operator<<(ostream& os, const cListaT<T>& Lista)
 	/*for(int i = 0; i < Lista.getCA() ; i++)
 		os << Lista.vector[i]->To_string() << endl;
 		*/
 	os << "lista" << endl;
 	return os;
+}
 }
 
 
