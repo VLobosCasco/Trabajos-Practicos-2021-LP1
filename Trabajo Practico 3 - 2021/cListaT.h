@@ -9,9 +9,10 @@ protected:
 	T** vector;
 	unsigned int CA, TAM;
 	void Redimensionalizar();
+	bool eliminar_lista;
 
 public:
-	cListaT(unsigned int TAM = NMAX);
+	cListaT(unsigned int TAM = NMAX, bool eliminar_lista = true);
 	~cListaT();
 
 	bool AgregarItem(T *item);
@@ -70,13 +71,14 @@ void cListaT<T>::Redimensionalizar()
 
 template<class T>
 
-cListaT<T>::cListaT(unsigned int TAM)
+cListaT<T>::cListaT(unsigned int TAM, bool eliminar_lista)
 {
 	vector = new T*[TAM];
 	for (unsigned int i = 0; i < TAM; i++)
 		vector[i] = NULL;
 
 	this->TAM = TAM;
+	this->eliminar_lista = eliminar_lista;
 	CA = 0;
 }
 
@@ -85,11 +87,14 @@ cListaT<T>::~cListaT()
 {
 	if (vector != NULL)
 	{
-		for (unsigned int i = 0; i < CA; i++)
-		{
-			if (vector[i] != NULL)
-				delete vector[i];
+		if (eliminar_lista) {
+			for (unsigned int i = 0; i < CA; i++)
+			{
+				if (vector[i] != NULL)
+					delete vector[i];
+			}
 		}
+
 		delete[] vector;
 	}
 }

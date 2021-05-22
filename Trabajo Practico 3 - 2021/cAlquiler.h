@@ -61,6 +61,7 @@ public:
 	//Verifica que el vehículo se encuentre disponible entre las dos fechas
 	bool VerificarDisponibilidad(cFecha* inicio, cFecha* fin);
 
+
 #pragma endregion
 };
 
