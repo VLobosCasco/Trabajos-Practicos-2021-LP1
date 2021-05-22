@@ -12,6 +12,6 @@ enum class eEstado { Libre = 0, En_Mantenimiento, Fuera_de_servicio };
 
 string ConvertColorString(eColores color);
 string CovertTipoAdicionalString(eTipoAdicional tipo);
-string CovertEstadoString(eTipoAdicional tipo);
+string CovertEstadoString(eEstado tipo);
 float getCostoAdicionalDefault(eTipoAdicional adicional);
 

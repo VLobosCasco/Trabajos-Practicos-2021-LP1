@@ -76,7 +76,9 @@ bool cFecha::FechaCompleta()
 
 string cFecha::To_string()
 {
-	return string();
+	return to_string(fecha.tm_year + 1900) +
+		"/" + to_string(fecha.tm_mon + 1) + 
+		"/" + to_string(fecha.tm_mday);
 }
 
 void cFecha::ImprimirFecha() {

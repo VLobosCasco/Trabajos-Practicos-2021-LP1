@@ -42,6 +42,14 @@ void cMoto::Imprimir()
 
 string cMoto::To_string() {
 
-	return string();
+	return
+		"Chasis: " + chasis + "\n" +
+		"Poliza: " + poliza + "\n" +
+		"Patente: " + patente + "\n" +
+		"Ultimo Mantenimiento: " + Ultimo_Mantenimiento->To_string() + "\n" +
+		"Color: " + ConvertColorString(color) + "\n" +
+		"Cantidad de Pasajeros: " + to_string(cant_pasajeros) + "\n"
+		"Precio Base: " + to_string(precio_base) + "\n"
+		"Precio Diario: " + to_string(precio_diario);
 }
 
