@@ -1,5 +1,5 @@
 ﻿#pragma once
-#define NMAX 100
+#define NMAX 20
 #include <string>
 using namespace std;
 template<class T>
@@ -74,14 +74,10 @@ cListaT<T>::cListaT(unsigned int TAM)
 {
 	vector = new T*[TAM];
 	for (unsigned int i = 0; i < TAM; i++)
-	{
 		vector[i] = NULL;
-	}
 
 	this->TAM = TAM;
 	CA = 0;
-
-
 }
 
 template<class T>
@@ -101,10 +97,8 @@ cListaT<T>::~cListaT()
 template<class T>
 void cListaT<T>::Listar()
 {
-		for (unsigned int i = 0; i < CA; i++)
-	{
+	for (unsigned int i = 0; i < CA; i++)
 		vector[i]->Imprimir();// imprimir
-	}
 }
 
 template<class T>
@@ -123,26 +117,25 @@ bool cListaT<T>::AgregarItem(T * item)
 
 
 template<class T>
-T* cListaT<T>::Quitar(string clave) {
-
+T* cListaT<T>::Quitar(string clave) 
+{
 	unsigned int pos = getItemPos(clave);
 	T* aux = NULL;
-	
-	aux = QuitarenPos(pos);
-	
-	return aux;
 
+	aux = QuitarenPos(pos);
+	return aux;
 }
 
 template<class T>
-T* cListaT<T>::Quitar(const T *item) {
+T* cListaT<T>::Quitar(const T *item) 
+{
 	unsigned int pos = getItemPos(item->getclave());
-	
-	if (pos >= CA) return NULL;
-	T* aux = NULL;
+	if (pos >= CA)
+		return NULL;
 
-		aux = QuitarenPos(pos);
-	
+	T* aux = NULL;
+	aux = QuitarenPos(pos);
+
 	return aux;
 }
 
@@ -155,12 +148,11 @@ T* cListaT<T>::QuitarenPos(unsigned int pos) {
 	T *aux = vector[pos];
 
 	for (unsigned int i = pos; i < CA - 1; i++)
-	{
 		vector[i] = vector[i + 1];
-	}
 
 	vector[CA - 1] = NULL;
 	CA--;
+
 	return aux;
 }
 
@@ -169,7 +161,6 @@ template<class T>
 void cListaT<T>::Eliminar(string clave) {
 
 	unsigned int pos = getItemPos(clave);
-	
 	Eliminar(pos);
 }
 
@@ -182,13 +173,14 @@ void cListaT<T>::Eliminar(const T *item) {
 template<class T>
 void cListaT<T>::Eliminar(unsigned int pos) {
 	
-	T* dato=QuitarenPos(pos);
-	
-	delete dato;
+	T* dato = NULL;
+	dato = QuitarenPos(pos);
+
+	if(dato != NULL)
+		delete dato;
 }
 
 template<class T>
-
 T* cListaT<T>::BuscarItem(string clave)
 {
 	for (unsigned int i = 0; i < CA; i++)
@@ -211,39 +203,30 @@ T* cListaT<T>::getItem(unsigned int pos)
 template<class T>
 unsigned int cListaT<T>::getItemPos(string clave)
 {
-
 	for (unsigned int i = 0; i < CA; i++)
 	{
 		string comp = vector[i]->getclave();
-
 		if (comp == clave)
 			return i;
 	}
-
 	return -1;
 }
 
 
 template <class T>
-void cListaT<T>::operator+(T * item) {
-
+void cListaT<T>::operator+(T * item) 
+{
 	AgregarItem(item);
-
 }
 
 template<class T>
 inline T * cListaT<T>::operator[](unsigned int pos)
 {
-	T* aux = NULL;
-
-	aux = getItem(pos);
-	
-	return aux;
+	return getItem(pos);
 }
 
 template<class T>
-void cListaT<T>::operator -(const T *item) {
-	
-		Eliminar(item);
-	
+void cListaT<T>::operator -(const T *item) 
+{
+	Eliminar(item);
 }
