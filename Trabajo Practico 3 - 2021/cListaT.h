@@ -52,18 +52,19 @@ unsigned int cListaT<T>::getCA()
 template<class T>
 void cListaT<T>::Redimensionalizar()
 {
-	T** aux = new T * [2*TAM];
+	TAM += 10;
+	T** aux = new T * [TAM];
 
-	for (int i = 0; i < 2*TAM ; i++)
+	for (int i = 0; i < TAM; i++) 
+	{
+		if (i < CA)
+			aux[i] = vector[i];
 		aux[i] = NULL;
-
-	for (int i = 0; i < TAM; i++)
-		aux[i] = vector[i];
+	}
 
 	delete[] vector;
 
 	vector = aux;
-	TAM = 2 * TAM;
 
 }
 
