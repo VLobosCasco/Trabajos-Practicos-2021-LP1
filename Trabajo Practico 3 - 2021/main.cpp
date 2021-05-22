@@ -3,6 +3,7 @@
 #include "cAlquiler.h"
 #include "cEmpresa.h"
 #include "funciones.h"
+#include "cListaT.h"
 
 using namespace std;
 
@@ -16,6 +17,6 @@ void main(){
 	cListaT<cCliente>* Probando = new cListaT<cCliente>();
 	Probando->AgregarItem(yo);
 	Probando->Listar();
-	cout << Probando;
+	cout << *Probando;
 
 };

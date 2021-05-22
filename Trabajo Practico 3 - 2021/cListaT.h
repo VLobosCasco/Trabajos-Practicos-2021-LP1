@@ -26,12 +26,8 @@ public:
 	void Eliminar(string clave);
 	void Eliminar(const T *item);
 	void operator-(const T *item);
-
-	bool operator==(T* item, string clave);
-	
-
 	void Eliminar(unsigned int pos);
-
+	
 	void Listar();
 	T* BuscarItem(string clave);
 	T* operator [](unsigned int pos);
@@ -41,7 +37,6 @@ public:
 	unsigned int getItemPos(string clave);
 	unsigned int getCA();
 	unsigned int getTAM();
-	friend ostream& operator<<(ostream& os, const cListaT<T>& Lista);
 };
 
 template<class T>
@@ -201,7 +196,7 @@ T* cListaT<T>::BuscarItem(string clave)
 {
 	for (unsigned int i = 0; i < CA; i++)
 	{
-		if (vector[i]== clave)	
+		if (vector[i]->getclave()== clave)	
 			return vector[i];
 	}
 	return NULL;
@@ -258,18 +253,13 @@ void cListaT<T>::operator -(const T *item)
 }
 
 template <class T>
-
-void operator<<(ostream& os, const cListaT<T>& Lista)
+ostream& operator<<(ostream& os, const cListaT<T>& Lista)
 {
-	for(int i = 0; i < Lista.CA ; i++)
-		os << Lista.vector[i].To_string() << endl;
-}
-void operator<<(ostream& o, cListaT<T>& object) {
-	o << object.Listar() << endl;
+	/*for(int i = 0; i < Lista.getCA() ; i++)
+		os << Lista.vector[i]->To_string() << endl;
+		*/
+	os << "lista" << endl;
+	return os;
 }
 
-/*template<class T>
-bool cListaT<T>::operator==(T* item, string clave) {
-
-}*/
 
