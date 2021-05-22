@@ -11,7 +11,7 @@
 
 class cEmpresa;
 using namespace std;
-class cListaAlquiler;
+
 class cAlquiler
 {
 private:

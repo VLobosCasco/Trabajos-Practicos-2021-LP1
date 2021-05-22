@@ -1,6 +1,5 @@
 #pragma once
 #include "cVehiculo.h"
-#include "cFecha.h"
 #include <iostream>
 
 class cAuto :
