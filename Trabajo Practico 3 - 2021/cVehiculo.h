@@ -3,7 +3,7 @@
 #include <string>
 #include "Definiciones.h"
 #include "cFecha.h"
-#include "Definiciones.h"
+
 using namespace std;
 
 class cVehiculo
@@ -20,7 +20,7 @@ protected:
 
 #pragma region Constructores y Destructores
 public:
-	//Constructor. Inicializa la fecha de último mantenimiento como la fecha actual.
+	//Constructor. Inicializa la fecha de último mantenimiento como NULL si no se la pasa
 	cVehiculo(string patente_c, string chasis_c, string poliza_c, eColores color_c, int cant_pasajeros_c, cFecha* ult_mantenimiento = NULL);
 
 	~cVehiculo();
@@ -66,6 +66,15 @@ public:
 	void setEstado(eEstado estado_nuevo) { estado = estado_nuevo; }
 
 #pragma endregion
+#pragma endregion
+
+#pragma region Sobrecarga
+	bool operator ==(cVehiculo* otro) {
+		return this->getclave() == otro->getclave();
+	}
+	bool operator !=(cVehiculo* otro) {
+		return this->getclave() != otro->getclave();
+	}
 #pragma endregion
 };
 
