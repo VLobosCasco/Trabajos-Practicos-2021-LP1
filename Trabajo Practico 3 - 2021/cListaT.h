@@ -1,6 +1,7 @@
 ﻿#pragma once
 #define NMAX 20
 #include <string>
+#include <iostream>
 using namespace std;
 template<class T>
 class cListaT
@@ -245,4 +246,10 @@ template<class T>
 void cListaT<T>::operator -(const T *item) 
 {
 	Eliminar(item);
+}
+
+template <class T>
+
+void operator<<(ostream& o, cListaT<T>& object) {
+	o << object.Listar() << endl;
 }
