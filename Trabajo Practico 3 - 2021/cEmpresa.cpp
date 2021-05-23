@@ -39,7 +39,7 @@ void cEmpresa::RetirardeCirculacion(cVehiculo* vehiculo)
 {
 	if (vehiculo != NULL)
 	{
-		vehiculo->setEstado(eEstado::Fuera_de_servicio);
+		vehiculo->setEstado(eEstado::Fuera_de_servicio); //cambio el estado, no lo elimino porque lo necesito en los alquileres
 	}
 	else
 		throw new exception("Error al retirar de circulación: No hay datos del vehículo");

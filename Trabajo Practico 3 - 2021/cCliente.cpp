@@ -2,7 +2,7 @@
 
 
 
-cCliente::cCliente() : DNI(to_string(0))
+cCliente::cCliente() : DNI(to_string(0)) //ojo que esto me va a dar claves repetidas entonces voy a poder agregar uno solo a la lista
 {
 	NombreCompleto = "Sin datos";
 	Fecha_de_Nacimiento = new cFecha();
@@ -13,7 +13,7 @@ cCliente::cCliente(string dni, string nombreapellido, cFecha* fecha_nacimiento, 
 {
 	
 	NombreCompleto = nombreapellido;
-	Fecha_de_Nacimiento = new cFecha(*fecha_nacimiento);
+	Fecha_de_Nacimiento = new cFecha(*fecha_nacimiento); //hago una nueva fecha por copia!! Si no cuando elimine el cliente se me va a borrar la fecha y si lo usé en otro lado voy a tener problemas
 	TarjetadeCredito = tarjeta_credito;
 }
 

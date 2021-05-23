@@ -11,6 +11,7 @@ cListaAdicional::cListaAdicional(cVehiculo* vehiculo, float costo_primer_adicion
 	CA = 0;
 	tarifa_diaria_adicionales = 0;
 
+	//según el tipo de vehiculo armo la lista de adicionales que corresponda
 	cMoto* aux_moto = dynamic_cast<cMoto*>(vehiculo);
 	if (aux_moto != NULL)
 	{
@@ -46,7 +47,7 @@ cListaAdicional::cListaAdicional(cVehiculo* vehiculo, float costo_primer_adicion
 void cListaAdicional::setAdicionales(eTipoAdicional primer_adicional, float primer_costo, eTipoAdicional segundo_adicional, float segundo_costo)
 {
 	if (primer_costo == 0) 
-		primer_costo = getCostoAdicionalDefault(primer_adicional);
+		primer_costo = getCostoAdicionalDefault(primer_adicional); //si los costos son 0, uso los default
 	adicional1 = new cAdicional(primer_adicional, primer_costo, 0);
 	CA = 1;
 
@@ -69,7 +70,7 @@ cListaAdicional::~cListaAdicional()
 		delete adicional2;
 }
 
-void cListaAdicional::ActualizarTarifaDiaria()
+void cListaAdicional::ActualizarTarifaDiaria() //actualiza la tarifa diaria según la cantidad de elementos
 {
 	tarifa_diaria_adicionales = 0;
 	
@@ -84,12 +85,12 @@ void cListaAdicional::AgregarAdicional(eTipoAdicional tipoadicional, int cant)
 {
 	if (adicional1 != NULL) {
 
-		if (adicional1->elemento == tipoadicional) {
+		if (adicional1->elemento == tipoadicional) { //si el elemento corresponda al que tengo en la lista
 
 			try {
 
-				adicional1->ModificarElementos(cant);
-				ActualizarTarifaDiaria();
+				adicional1->ModificarElementos(cant);//trato de agregarlo/eliminarlo
+				ActualizarTarifaDiaria();//si fue exitoso, actualizo la tarifa diaria
 				return;
 			}
 			catch (exception* ex)
@@ -104,11 +105,11 @@ void cListaAdicional::AgregarAdicional(eTipoAdicional tipoadicional, int cant)
 	if (adicional2 != NULL) 
 	{
 
-		if (adicional2->elemento == tipoadicional) {
+		if (adicional2->elemento == tipoadicional) {//si el elemento corresponda al que tengo en la lista
 	
 			try {
-				adicional2->ModificarElementos(cant);
-				ActualizarTarifaDiaria();
+				adicional2->ModificarElementos(cant);//trato de agregarlo/eliminarlo
+				ActualizarTarifaDiaria();//si fue exitoso, actualizo la tarifa diaria
 				return;
 			}
 			catch (exception* ex)
@@ -120,11 +121,12 @@ void cListaAdicional::AgregarAdicional(eTipoAdicional tipoadicional, int cant)
 			}
 		}
 		
+		//si el elemento no correspode con adicional1 ni adicional2 entonces no corresponde al tipo de vehiculo
 		throw new exception("No es posible agregar elementos de ese tipo en este alquiler");
 	}
 }
 
-void cListaAdicional::QuitarAdicional(eTipoAdicional tipoadicional, int cantidad)
+void cListaAdicional::QuitarAdicional(eTipoAdicional tipoadicional, int cantidad) //funciona de la misma forma que agregar
 {
 	if (adicional1->elemento == tipoadicional) {
 		try {

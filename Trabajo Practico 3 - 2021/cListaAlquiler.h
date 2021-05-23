@@ -13,31 +13,25 @@ public:
 #pragma region Metodos
 
 	// Lista todos los alquileres de un cierto tipo de vehiculo
-	template <class TipoVehiculo>
+	template <class TipoVehiculo> //esto me permite usar el mismo código para las 4 impresiones
 	void ListarAlquiler();
 
 	// Lista todos los alquileres y devuelve la ganancia total de un cierto tipo de vehiculo
-	template <class TipoVehiculo>
+	template <class TipoVehiculo>//esto me permite usar el mismo código para las 4 impresiones y cálculo de ganancia
 	float ListarGananciaAlquiler();
 
 	//Agregar Alquiler, verifica que el vehiculo no se superponga
-	void AgregarItem(cAlquiler* item);
+	void AgregarItem(cAlquiler* item); //sobreescribo el de cListaT porque necesito ahcer otras verificaciones
 	
 	//To String
 	string To_String();
 
 	//AgregarAlquiler
-	void operator+(cAlquiler* item);
+	void operator+(cAlquiler* item); //sobreescribo el de lista
 
 #pragma endregion
 };
-/*
-template<class T>
-void cListaAlquiler::operator+(T* item)
-{
-	AgregarItem(item);
-}
-*/
+
 template<class TipoVehiculo>
 float cListaAlquiler::ListarGananciaAlquiler()
 {

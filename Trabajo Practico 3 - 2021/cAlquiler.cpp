@@ -87,7 +87,7 @@ void cAlquiler::AgregarAdicional(eTipoAdicional tipoAdicional, int cant)
 	}
 }
 
-bool cAlquiler::VerificarDisponibilidad(cFecha* inicio, cFecha* fin)
+bool cAlquiler::VerificarDisponibilidad(cFecha* inicio, cFecha* fin) 
 {
 	bool aux = cFecha::FechasSuperpuestas(fecha_inicio, fecha_fin, inicio, fin); 
 	return !aux; //si las fechas se superponen, entonces no está disponible
@@ -98,7 +98,7 @@ void cAlquiler::QuitarAdicional(eTipoAdicional tipoAdicional, int cant)
 	try {
 		adicionales->QuitarAdicional(tipoAdicional, cant);
 		ActualizarMontoTotal();
-		if (tipoAdicional == eTipoAdicional::Asientos_rebatibles) //si agregué asientos, aumento la cantidad de plazas
+		if (tipoAdicional == eTipoAdicional::Asientos_rebatibles) //si saqué asientos, reduzco la cantidad de plazas
 			vehiculo->ModificarAsientos(-cant);
 	}
 	catch (exception* ex) {

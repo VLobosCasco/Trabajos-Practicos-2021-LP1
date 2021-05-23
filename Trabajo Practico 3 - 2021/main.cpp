@@ -39,7 +39,7 @@ void main(){
 	delete clientes[4]; //este no se agregó a la lista por repetido así que lo borre porque no se va a borrar con la lista
 	delete[] clientes;
 	
-	cout << "Lista de clientes" << endl;
+	cout << "---------- LISTA DE CLIENTES ----------" << endl;
 	ListaClientes->Listar(); //este lo dejé hasta que la sobrecarga esté terminada, después hay que borrarlo Florr
 	cout << *ListaClientes;
 
@@ -66,6 +66,7 @@ void main(){
 
 	delete[] vehiculos;
 
+	cout << "---------- LISTA DE VEHICULOS ----------" << endl;
 	ListaVehiculos->Listar();//Imprimir! Florrr
 
 	//Creo Alquileres y lista alquileres
@@ -76,7 +77,7 @@ void main(){
 	alquileres[1] = new cAlquiler((*ListaClientes)[1], (*ListaVehiculos)[7], May5, Jun17);
 	alquileres[2] = new cAlquiler((*ListaClientes)[2], (*ListaVehiculos)[2], Nov6, Nov20);
 	alquileres[3] = new cAlquiler((*ListaClientes)[3], (*ListaVehiculos)[1], May18, Jun17);
-	alquileres[4] = new cAlquiler((*ListaClientes)[3], (*ListaVehiculos)[0], Feb20, Mar7); // este se superpone
+	alquileres[4] = new cAlquiler((*ListaClientes)[3], (*ListaVehiculos)[0], Feb20, Mar7); // este se superponen las fechass
 
 
 	cListaAlquiler* ListaAlquileres = new cListaAlquiler(N_ALQUILERES, true);
@@ -86,11 +87,13 @@ void main(){
 	delete alquileres[4]; // este no se va a agregar a la lista entonces lo borro ahora para no olvidarmelo
 	delete[] alquileres;
 
+	cout << "---------- LISTA DE ALQUILERES ----------" << endl;
 	ListaAlquileres->Listar(); //Florrr
 
 	//creo Empresa
 	cEmpresa* empresa = new cEmpresa("Di Marco y Asociados", ListaVehiculos, ListaClientes, ListaAlquileres);
 
+	cout << "---------- EMPRESA ----------" << endl;
 	empresa->Imprimir();//FLORRR
 
 	//La empresa va a adquirir un vehículo, poner en mantenimiento otro, y dar de baja otro
@@ -100,7 +103,7 @@ void main(){
 	}
 	catch (exception* ex) {
 
-		string error = ex->what(); //esto tirar error por tamaño de la lista
+		string error = ex->what(); //esto debería tirar error por tamaño de la lista
 		delete ex;
 
 		if (error == "Error al agregar: No hay tamaño suficiente para agregar el item")
@@ -111,7 +114,7 @@ void main(){
 		else
 			cout << error << endl;
 	}
-
+	cout << "---------- VEHICULO EN MANTENIMIENTO ----------" << endl;
 	empresa->Mantenimiento("ABC123");
 	empresa->RetirardeCirculacion((*ListaVehiculos)[3]);
 
@@ -136,8 +139,14 @@ void main(){
 		cout << error << endl;
 	}
 
+	//IMPRIMO AL VEHICULO EN MANTENIMIENTO
+	
+	ListaVehiculos->BuscarItem("ABC123")->Imprimir();
+
 	//Saco al vehículo de mantenimiento
 	empresa->TerminarMantenimiento("ABC123");
+
+	cout << "---------- VEHICULO FUERA DE MANTENIMIENTO ----------" << endl;
 	ListaVehiculos->BuscarItem("ABC123")->Imprimir();
 	
 	//Agrego adicionales
@@ -177,8 +186,16 @@ void main(){
 		delete ex;
 		cout << err << endl;
 	}
-	(*ListaAlquileres)[2]->Imprimir();//FLORRR
 
+	cout << "---------- ALQUILERES CON ADICIONALES ----------" << endl;
+
+	//este tiene que tener 2 cascos
+	(*ListaAlquileres)[0]->Imprimir();//FLORRR
+
+	//este no tiene que tener adicionales
+	(*ListaAlquileres)[2]->Imprimir();///FLORR
+
+	//este no tiene adicionales todavía
 	(*ListaAlquileres)[1]->Imprimir();///FLORR
 
 	//Agrego 2 asientos rebatibles entonces tiene que aumentar en 2 la capacidad de pasajeros
@@ -193,23 +210,30 @@ void main(){
 		delete ex;
 		cout << err << endl;
 	}
-
+	
+	cout << "---------- ALQUILER CON ASIENTOS REBATIBLES ADICIONALES ----------" << endl;
 	(*ListaAlquileres)[1]->Imprimir();///FLORR
 
 
 	//Listo por cada vehículo y calculo ganancias
+
+	cout << "---------- LISTO POR MOTO ----------" << endl;
 	float ganancia_moto=ListaAlquileres->ListarGananciaAlquiler<cMoto>();
 	cout << "Ganancia en alquileres de moto: " << ganancia_moto << endl;
 
+	cout << "---------- LISTO POR AUTO ----------" << endl;
 	float ganancia_auto = ListaAlquileres->ListarGananciaAlquiler<cAuto>();
 	cout << "Ganancia en alquileres de auto: " << ganancia_auto << endl;
 
+	cout << "---------- LISTO POR CAMIONETA ----------" << endl;
 	float ganancia_camioneta = ListaAlquileres->ListarGananciaAlquiler<cCamioneta>();
 	cout << "Ganancia en alquileres de camioneta: " << ganancia_camioneta << endl;
 
+	cout << "---------- LISTO POR TRAFIC ----------" << endl;
 	float ganancia_trafic = ListaAlquileres->ListarGananciaAlquiler<cTrafic>();
 	cout << "Ganancia en alquileres de trafics: " << ganancia_trafic << endl;
 
+	cout << "---------- GANANCIA TOTAL ----------" << endl;
 	float ganancia_total = ganancia_moto + ganancia_auto + ganancia_camioneta + ganancia_trafic;
 	cout << "Ganancia total alquileres: " << ganancia_total << endl;
 

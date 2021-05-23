@@ -28,7 +28,7 @@ cFecha::cFecha(int d, int m, int a)
 int cFecha::DiasEntreFechas(cFecha* inicio, cFecha* fin)
 {
 	int dif = 0;
-	time_t aux_inicio = mktime(&(inicio->fecha));
+	time_t aux_inicio = mktime(&(inicio->fecha)); //paso las fechas  a segundos
 	time_t aux_fin = mktime(&(fin->fecha));
 
 	//verifico que las fechas que recibo no sean null ni estén incompletas
@@ -39,7 +39,7 @@ int cFecha::DiasEntreFechas(cFecha* inicio, cFecha* fin)
 			throw new exception("Las fechas no son válidas");
 		else
 		{
-			dif = difftime(aux_fin, aux_inicio) / (86400); //calculo la diferencia de tiempo y la devuelvo
+			dif = difftime(aux_fin, aux_inicio) / (86400); //calculo la diferencia de tiempo en segundos, transforma a dias,  y la devuelvo
 			return dif;
 		}
 	}
@@ -48,7 +48,7 @@ int cFecha::DiasEntreFechas(cFecha* inicio, cFecha* fin)
 
 bool cFecha::FechasSuperpuestas(cFecha* inicio1, cFecha* fin1, cFecha* inicio2, cFecha* fin2)
 {
-	if ((*inicio2 > *inicio1 && *inicio2 < *fin1) || *inicio1 == *inicio2)
+	if ((*inicio2 > *inicio1 && *inicio2 < *fin1) || *inicio1 == *inicio2) 
 		return true;
 	if ((*fin2<*fin1 && *fin2>*inicio1) || *fin1 == *fin2)
 		return true;

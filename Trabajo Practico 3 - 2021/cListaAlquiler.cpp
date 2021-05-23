@@ -18,7 +18,7 @@ void cListaAlquiler::AgregarItem(cAlquiler* item)
 
 	for (unsigned int i = 0; i < CA; i++) {
 
-		//me fijo que no haya otro alquiler con el mismo vehiculo en las otras fechas
+		//me fijo que no haya otro alquiler con el mismo vehiculo en las mismas fechas
 		if (*(vector[i]->getvehiculo()) == *(item->getvehiculo())) {
 
 			if (!vector[i]->VerificarDisponibilidad(item->getfechainicio(),item->getfechafin()))

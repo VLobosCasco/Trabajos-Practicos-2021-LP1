@@ -26,6 +26,7 @@ public:
 
 #pragma region Metodos
 
+	//Actualiza la tarifa diaria de todos los adicionales en la lista
 	void ActualizarTarifaDiaria();
 
 	void AgregarAdicional(eTipoAdicional tipoadicional, int cantidad);

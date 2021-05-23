@@ -34,7 +34,7 @@ public:
 #pragma region Getters y Setters
 
 	//devuelve el dni (clave)
-	string getclave() const;
+	string getclave() const; //lo necesito para la lista
 
 #pragma endregion
 
