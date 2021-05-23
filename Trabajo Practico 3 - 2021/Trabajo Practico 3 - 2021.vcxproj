@@ -154,7 +154,6 @@
     <ClCompile Include="cTrafic.cpp" />
     <ClCompile Include="cVehiculo.cpp" />
     <ClCompile Include="Definiciones.cpp" />
-    <ClCompile Include="funciones.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
