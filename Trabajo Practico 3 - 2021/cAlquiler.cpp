@@ -14,8 +14,8 @@ cAlquiler::cAlquiler(cCliente* _cliente, cVehiculo* _vehiculo, cFecha* _fecha_in
 		vehiculo = _vehiculo;
 	else
 		throw new exception("El vehículo no se encuentra disponible");
-	fecha_inicio = _fecha_inicio;
-	fecha_fin = _fecha_final;
+	fecha_inicio = new cFecha(*_fecha_inicio);
+	fecha_fin = new cFecha(*_fecha_final);
 	adicionales = new cListaAdicional(_vehiculo, costo1, costo2);
 	ActualizarMontoTotal();
 	Cont_alquiler++;
@@ -26,6 +26,10 @@ cAlquiler::~cAlquiler()
 {
 	if (adicionales != NULL) 
 		delete adicionales;
+	if (fecha_inicio != NULL)
+		delete fecha_inicio;
+	if (fecha_fin != NULL)
+		delete fecha_fin;
 }
 
 string cAlquiler::To_string()

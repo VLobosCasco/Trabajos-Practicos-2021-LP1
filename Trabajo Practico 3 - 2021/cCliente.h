@@ -22,10 +22,10 @@ public:
 	cCliente();
 
 	//Constructor por parámetros, recibe puntero a cFecha
-	cCliente(string dni, string nombreapellido, cFecha* fdn, string tarj_cred);
+	cCliente(string dni, string nombreapellido, cFecha* fecha_nacimiento, string tarjeta_credito);
 
 	//Constructor por parámetros, recibe datos de dia, mes, año
-	cCliente(string dni, string nombreapellido, int dia, int mes, int anio, string tarj_cred);
+	cCliente(string dni, string nombreapellido, int dia, int mes, int anio, string tarjeta_credito);
 
 	~cCliente();
 

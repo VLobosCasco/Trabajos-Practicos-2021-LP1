@@ -9,20 +9,20 @@ cCliente::cCliente() : DNI(to_string(0))
 	TarjetadeCredito = "Sin datos";
 }
 
-cCliente::cCliente(string dni, string nombreapellido, cFecha* fdn, string tarj_cred) : DNI(dni)
+cCliente::cCliente(string dni, string nombreapellido, cFecha* fecha_nacimiento, string tarjeta_credito) : DNI(dni)
 {
 	
 	NombreCompleto = nombreapellido;
-	Fecha_de_Nacimiento = fdn;
-	TarjetadeCredito = tarj_cred;
+	Fecha_de_Nacimiento = new cFecha(*fecha_nacimiento);
+	TarjetadeCredito = tarjeta_credito;
 }
 
-cCliente::cCliente(string dni, string nombreapellido, int dia, int mes, int anio, string tarj_cred) : DNI(dni)
+cCliente::cCliente(string dni, string nombreapellido, int dia, int mes, int anio, string tarjeta_credito) : DNI(dni)
 {
 	
 	NombreCompleto = nombreapellido;
 	Fecha_de_Nacimiento = new cFecha(dia, mes, anio);
-	TarjetadeCredito = tarj_cred;
+	TarjetadeCredito = tarjeta_credito;
 }
 
 cCliente::~cCliente()

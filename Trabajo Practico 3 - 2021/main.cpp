@@ -15,11 +15,7 @@ using namespace std;
 
 
 void main(){
-	/*cFecha* inicio = new cFecha(5, 5, 2021);
-	cFecha* fin = new cFecha(10, 5, 2021);
-	int aux = cFecha::DiasEntreFechas(inicio, fin);
-	cout << aux;*/
-
+	
 	//Creo fechas
 	cFecha* Nov6 = new cFecha(6, 11, 2021);
 	cFecha* Nov20 = new cFecha(20, 11, 2021);
@@ -95,10 +91,20 @@ void main(){
 
 	empresa->Imprimir();//FLORRR
 
+	//Libero TODA la memoria
 	delete empresa;
 	delete ListaVehiculos;
 	delete ListaAlquileres;
 	delete ListaClientes;
-	
+	delete Nov6;
+	delete Nov20;
+	delete May5 ;
+	delete May18;
+	delete Mar3 ;
+	delete Jun17;
+	delete Ene5 ;
+	delete Feb20 ;
+	delete Mar7 ;
+
 
 };
