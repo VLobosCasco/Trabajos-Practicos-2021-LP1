@@ -18,7 +18,7 @@ public:
 
 	// Lista todos los alquileres y devuelve la ganancia total de un cierto tipo de vehiculo
 	template <class TipoVehiculo>
-	void ListarGananciaAlquiler();
+	float ListarGananciaAlquiler();
 
 	//Agregar Alquiler, verifica que el vehiculo no se superponga
 	void AgregarItem(cAlquiler* item);
@@ -39,7 +39,7 @@ void cListaAlquiler::operator+(T* item)
 }
 */
 template<class TipoVehiculo>
-inline void cListaAlquiler::ListarGananciaAlquiler()
+float cListaAlquiler::ListarGananciaAlquiler()
 {
 	float ganancia = 0;
 	TipoVehiculo* aux = NULL;
@@ -60,7 +60,7 @@ inline void cListaAlquiler::ListarAlquiler()
 	TipoVehiculo* aux = NULL;
 	for (int i = 0; i < CA; i++)
 	{
-		aux = dynamic_cast<TipoVehiculo*>(vector[i]->vehiculo);
+		aux = dynamic_cast<TipoVehiculo*>(vector[i]->getvehiculo());
 		if (aux != NULL) {
 			vector[i]->Imprimir();
 		}

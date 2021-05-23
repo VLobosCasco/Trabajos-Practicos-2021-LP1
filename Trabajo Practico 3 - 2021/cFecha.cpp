@@ -48,11 +48,11 @@ int cFecha::DiasEntreFechas(cFecha* inicio, cFecha* fin)
 
 bool cFecha::FechasSuperpuestas(cFecha* inicio1, cFecha* fin1, cFecha* inicio2, cFecha* fin2)
 {
-	if ((inicio2 > inicio1 && inicio2 < fin1) || inicio1 == inicio2)
+	if ((*inicio2 > *inicio1 && *inicio2 < *fin1) || *inicio1 == *inicio2)
 		return true;
-	if ((fin2<fin1 && fin2>inicio1) || fin1 == fin2)
+	if ((*fin2<*fin1 && *fin2>*inicio1) || *fin1 == *fin2)
 		return true;
-	if (inicio2<inicio1 && fin2>fin1)
+	if (*inicio2<*inicio1 && *fin2>*fin1)
 		return true;
 	return false;
 }

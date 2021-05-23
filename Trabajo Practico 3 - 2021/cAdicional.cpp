@@ -21,6 +21,8 @@ void cAdicional::ModificarElementos(int cant)
 		cantidad = +cant;
 	else if (cantidad + cant > 2)
 		throw new exception("Se ha alcanzado el número máximo de cascos: 2");
+
+	cantidad = +cant;
 	
 }
 

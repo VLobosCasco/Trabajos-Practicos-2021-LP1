@@ -34,7 +34,7 @@ cAlquiler::~cAlquiler()
 
 string cAlquiler::To_string()
 {
-	return string();
+	return "hola";
 }
 
 void cAlquiler::Imprimir()

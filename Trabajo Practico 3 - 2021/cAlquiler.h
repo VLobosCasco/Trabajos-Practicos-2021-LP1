@@ -11,6 +11,7 @@ using namespace std;
 
 class cAlquiler
 {
+	friend class cListaAlquiler;
 private:
 	const string IDAlquiler;
 	cCliente* cliente;

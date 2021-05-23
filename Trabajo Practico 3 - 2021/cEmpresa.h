@@ -51,5 +51,15 @@ public:
 	void Imprimir();
 
 #pragma endregion
+
+#pragma region Getters y Setters
+
+	//Devuelve la lista de vehiculos
+	cListaT<cVehiculo>* getListaVehiculos();
+
+	//Devuelve la lista de alquileres
+	cListaAlquiler* getListaAlquileres();
+
+#pragma endregion
 };
 

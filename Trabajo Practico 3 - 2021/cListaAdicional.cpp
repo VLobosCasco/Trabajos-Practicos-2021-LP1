@@ -82,35 +82,46 @@ void cListaAdicional::ActualizarTarifaDiaria()
 
 void cListaAdicional::AgregarAdicional(eTipoAdicional tipoadicional, int cant)
 {
-	if (adicional1->elemento == tipoadicional) {
-		try {
-			adicional1->ModificarElementos(cant);
-			ActualizarTarifaDiaria();
-			return;
-		}
-		catch (exception* ex)
-		{
-			string err = ex->what();
-			delete ex;
-			ex = new exception(("Error al agregar elementos: " + err).c_str());
-			throw ex;
-		}
-	}
-	if (adicional2->elemento == tipoadicional) {
-		try {
-			adicional2->ModificarElementos(cant);
-			ActualizarTarifaDiaria();
-			return;
-		}
-		catch (exception* ex)
-		{
-			string err = ex->what();
-			delete ex;
-			ex = new exception(("Error al agregar elementos: " + err).c_str());
-			throw ex;
+	if (adicional1 != NULL) {
+
+		if (adicional1->elemento == tipoadicional) {
+
+			try {
+
+				adicional1->ModificarElementos(cant);
+				ActualizarTarifaDiaria();
+				return;
+			}
+			catch (exception* ex)
+			{
+				string err = ex->what();
+				delete ex;
+				ex = new exception(("Error al agregar elementos: " + err).c_str());
+				throw ex;
+			}
 		}
 	}
-	throw new exception("No es posible agregar elementos de ese tipo en este alquiler");
+	if (adicional2 != NULL) 
+	{
+
+		if (adicional2->elemento == tipoadicional) {
+	
+			try {
+				adicional2->ModificarElementos(cant);
+				ActualizarTarifaDiaria();
+				return;
+			}
+			catch (exception* ex)
+			{
+				string err = ex->what();
+				delete ex;
+				ex = new exception(("Error al agregar elementos: " + err).c_str());
+				throw ex;
+			}
+		}
+		
+		throw new exception("No es posible agregar elementos de ese tipo en este alquiler");
+	}
 }
 
 void cListaAdicional::QuitarAdicional(eTipoAdicional tipoadicional, int cantidad)

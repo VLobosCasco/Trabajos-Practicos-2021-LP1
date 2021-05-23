@@ -32,7 +32,7 @@ void cEmpresa::AdquirirVehiculo(cVehiculo* vehiculo)
 		}
 	}
 	else
-		throw new exception("Error al retirar de circulación: No hay datos del vehículo");
+		throw new exception("Error al adquirir vehiculo: No hay datos del vehículo");
 }
 
 void cEmpresa::RetirardeCirculacion(cVehiculo* vehiculo)
@@ -123,4 +123,14 @@ string cEmpresa::To_string()
 void cEmpresa::Imprimir()
 {
 	cout << To_string() << endl;
+}
+
+cListaT<cVehiculo>* cEmpresa::getListaVehiculos()
+{
+	return vehiculos;
+}
+
+cListaAlquiler* cEmpresa::getListaAlquileres()
+{
+	return alquileres;
 }
