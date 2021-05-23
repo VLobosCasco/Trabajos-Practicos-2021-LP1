@@ -3,7 +3,12 @@
 #define DEFAULT_SILLA 20
 #define DEFAULT_PORTAEQUIPAJE 50
 #define DEFAULT_ASIENTO 25
+#define N_CLIENTES 5
+#define N_VEHICULOS 8
+#define N_ALQUILERES 5
+
 #include <string>
+
 using namespace std;
 
 enum class eColores { ROJO = 0, AZUL, VIOLETA, GRIS, NEGRO, BLANCO };

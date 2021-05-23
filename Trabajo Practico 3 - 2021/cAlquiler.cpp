@@ -7,16 +7,16 @@
 
 int cAlquiler::Cont_alquiler = 0;
 
-cAlquiler::cAlquiler(cCliente* cliente, cVehiculo* vehiculo, cFecha* fecha_inicio, cFecha* fecha_final, float costo1, float costo2) :IDAlquiler(std::to_string(Cont_alquiler))
+cAlquiler::cAlquiler(cCliente* _cliente, cVehiculo* _vehiculo, cFecha* _fecha_inicio, cFecha* _fecha_final, float costo1, float costo2) :IDAlquiler(std::to_string(Cont_alquiler))
 {
-	cliente = cliente;
-	if (vehiculo->getEstado() == eEstado::Libre)
-		vehiculo = vehiculo;
+	cliente = _cliente;
+	if (_vehiculo->getEstado() == eEstado::Libre)
+		vehiculo = _vehiculo;
 	else
 		throw new exception("El vehículo no se encuentra disponible");
-	fecha_inicio = fecha_inicio;
-	fecha_fin = fecha_final;
-	adicionales = new cListaAdicional(vehiculo, costo1, costo2);
+	fecha_inicio = _fecha_inicio;
+	fecha_fin = _fecha_final;
+	adicionales = new cListaAdicional(_vehiculo, costo1, costo2);
 	ActualizarMontoTotal();
 	Cont_alquiler++;
 
@@ -63,12 +63,11 @@ cFecha* cAlquiler::getfechafin() const
 	return fecha_fin;
 }
 
-
-
 void cAlquiler::ActualizarMontoTotal()
 {
+	monto_total = 0;
 	adicionales->ActualizarTarifaDiaria();
-	monto_total = vehiculo->CalcularTarifa(*fecha_inicio, *fecha_fin) + adicionales->tarifa_diaria_adicionales * cFecha::DiasEntreFechas(fecha_inicio, fecha_fin);
+	monto_total = getvehiculo()->CalcularTarifa(*getfechainicio(), *getfechafin()) + adicionales->tarifa_diaria_adicionales * cFecha::DiasEntreFechas(getfechainicio(), getfechafin());
 }
 
 void cAlquiler::AgregarAdicional(eTipoAdicional tipoAdicional, int cant)
@@ -86,8 +85,8 @@ void cAlquiler::AgregarAdicional(eTipoAdicional tipoAdicional, int cant)
 
 bool cAlquiler::VerificarDisponibilidad(cFecha* inicio, cFecha* fin)
 {
-	bool aux = cFecha::FechasSuperpuestas(fecha_inicio, fecha_fin, inicio, fin);
-	return aux;
+	bool aux = cFecha::FechasSuperpuestas(fecha_inicio, fecha_fin, inicio, fin); 
+	return !aux; //si las fechas se superponen, entonces no está disponible
 }
 
 void cAlquiler::QuitarAdicional(eTipoAdicional tipoAdicional, int cant)

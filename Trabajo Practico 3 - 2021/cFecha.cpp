@@ -35,7 +35,7 @@ int cFecha::DiasEntreFechas(cFecha* inicio, cFecha* fin)
 	if ((inicio != NULL && fin != NULL) && inicio->FechaCompleta() && fin->FechaCompleta())
 	{
 		//verifico que fecha fin > fecha inicio con operador sobrecargado
-		if (inicio > fin)
+		if (*inicio > *fin)
 			throw new exception("Las fechas no son válidas");
 		else
 		{

@@ -39,7 +39,7 @@ cListaAdicional::cListaAdicional(cVehiculo* vehiculo, float costo_primer_adicion
 		return;
 
 	}
-
+	ActualizarTarifaDiaria();
 }
 
 
@@ -71,7 +71,13 @@ cListaAdicional::~cListaAdicional()
 
 void cListaAdicional::ActualizarTarifaDiaria()
 {
-	tarifa_diaria_adicionales = adicional1->CalcularCostoDiarioTotal() + adicional2->CalcularCostoDiarioTotal();
+	tarifa_diaria_adicionales = 0;
+	
+	if (adicional1 != NULL)
+		tarifa_diaria_adicionales =+ adicional1->CalcularCostoDiarioTotal();
+	
+	if(adicional2!=NULL)
+		tarifa_diaria_adicionales =+ adicional2->CalcularCostoDiarioTotal();
 }
 
 void cListaAdicional::AgregarAdicional(eTipoAdicional tipoadicional, int cant)

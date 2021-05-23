@@ -1,26 +1,25 @@
 #include "cCliente.h"
 
-int cCliente::Cant_clientes = 0;
 
-cCliente::cCliente() :IDCliente(to_string(Cant_clientes)), DNI(to_string(0))
+
+cCliente::cCliente() : DNI(to_string(0))
 {
-	Cant_clientes++;
 	NombreCompleto = "Sin datos";
 	Fecha_de_Nacimiento = new cFecha();
 	TarjetadeCredito = "Sin datos";
 }
 
-cCliente::cCliente(string dni, string nombreapellido, cFecha* fdn, string tarj_cred) :IDCliente(to_string(Cant_clientes)), DNI(dni)
+cCliente::cCliente(string dni, string nombreapellido, cFecha* fdn, string tarj_cred) : DNI(dni)
 {
-	Cant_clientes++;
+	
 	NombreCompleto = nombreapellido;
 	Fecha_de_Nacimiento = fdn;
 	TarjetadeCredito = tarj_cred;
 }
 
-cCliente::cCliente(string dni, string nombreapellido, int dia, int mes, int anio, string tarj_cred) :IDCliente(to_string(Cant_clientes)), DNI(dni)
+cCliente::cCliente(string dni, string nombreapellido, int dia, int mes, int anio, string tarj_cred) : DNI(dni)
 {
-	Cant_clientes++;
+	
 	NombreCompleto = nombreapellido;
 	Fecha_de_Nacimiento = new cFecha(dia, mes, anio);
 	TarjetadeCredito = tarj_cred;
@@ -34,20 +33,15 @@ cCliente::~cCliente()
 
 string cCliente::getclave() const
 {
-	return IDCliente;
+	return DNI;
 }
 
-string cCliente::getID() const
-{
-	return IDCliente;
-}
 
 string cCliente::To_string()
 {
-	return "ID: " + IDCliente + "\n" +
-		"DNI: " + DNI + "\n" +
+	return "DNI: " + DNI + "\n" +
 		"Nombre Completo: " + NombreCompleto + "\n" +
-		"Fecha de Nacimiento: " + Fecha_de_Nacimiento->To_string();
+		"Fecha de Nacimiento: " + Fecha_de_Nacimiento->To_string()+"\n";
 
 
 }

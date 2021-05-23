@@ -2,9 +2,14 @@
 #include "cListaT.h"
 #include "cAlquiler.h"
 class cListaAlquiler :
-    protected cListaT<cAlquiler>
+    public cListaT<cAlquiler>
 {
 public:
+#pragma region Constructor
+	cListaAlquiler();
+	cListaAlquiler(int tam, bool eliminar);
+#pragma endregion
+
 #pragma region Metodos
 
 	// Lista todos los alquileres de un cierto tipo de vehiculo
@@ -19,13 +24,20 @@ public:
 	void AgregarItem(cAlquiler* item);
 	
 	//To String
-
 	string To_String();
+
+	//AgregarAlquiler
+	void operator+(cAlquiler* item);
 
 #pragma endregion
 };
-
-
+/*
+template<class T>
+void cListaAlquiler::operator+(T* item)
+{
+	AgregarItem(item);
+}
+*/
 template<class TipoVehiculo>
 inline void cListaAlquiler::ListarGananciaAlquiler()
 {

@@ -4,7 +4,7 @@ cVehiculo::cVehiculo(string patente_c, string chasis_c, string poliza_c, eColore
 {
 	color = color_c;
 	cant_pasajeros = cant_pasajeros_c;
-	Ultimo_Mantenimiento = ult_mantenimiento;
+	Ultimo_Mantenimiento = new cFecha(*ult_mantenimiento);
 	estado = eEstado::Libre;
 }
 
@@ -31,7 +31,7 @@ string cVehiculo::To_string()
 		"Patente: " + patente + "\n" +
 		"Ultimo Mantenimiento: " + Ultimo_Mantenimiento->To_string() + "\n" +
 		"Color: " + ConvertColorString(color) + "\n" +
-		"Cantidad de Pasajeros: " + to_string(cant_pasajeros);
+		"Cantidad de Pasajeros: " + to_string(cant_pasajeros)+"\n\n";
 }
 
 void cVehiculo::Imprimir()

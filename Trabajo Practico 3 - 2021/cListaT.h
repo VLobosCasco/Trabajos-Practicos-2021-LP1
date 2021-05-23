@@ -9,7 +9,6 @@ class cListaT
 protected:
 	T** vector;
 	unsigned int CA, TAM;
-	void Redimensionalizar();
 	bool eliminar_lista;
 
 public:
@@ -33,6 +32,7 @@ public:
 	T* getItem(unsigned int pos);
 	string To_String();
 
+	void Redimensionalizar();
 	unsigned int getItemPos(string clave);
 	unsigned int getCA();
 	unsigned int getTAM();
@@ -63,7 +63,8 @@ void cListaT<T>::Redimensionalizar()
 	{
 		if (i < CA)
 			aux[i] = vector[i];
-		aux[i] = NULL;
+		else
+			aux[i] = NULL;
 	}
 
 	//borro el vector anterior
@@ -176,7 +177,7 @@ T* cListaT<T>::BuscarItem(string clave)
 {
 	for (unsigned int i = 0; i < CA; i++)
 	{
-		if (vector[i]->getclave()== clave)	
+		if (*(vector[i])== clave)	
 			return vector[i];
 	}
 	return NULL;

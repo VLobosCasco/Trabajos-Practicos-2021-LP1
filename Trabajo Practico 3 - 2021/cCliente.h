@@ -7,14 +7,13 @@ using namespace std;
 class cCliente
 {
 private:
-	const string IDCliente; //clave
+	
 	string TarjetadeCredito;
-	const string DNI;
+	const string DNI; //clave
 	cFecha* Fecha_de_Nacimiento;
 	string NombreCompleto;
 
-	//Este atributo lo voy a usar para ir asignando IDs únicos
-	static int Cant_clientes;
+
 
 #pragma region Constructores y Destructores
 public:
@@ -34,11 +33,8 @@ public:
 
 #pragma region Getters y Setters
 
-	//devuelve el IDCliente (clave)
+	//devuelve el dni (clave)
 	string getclave() const;
-
-	//devuelve IDCliente
-	string getID() const;
 
 #pragma endregion
 
