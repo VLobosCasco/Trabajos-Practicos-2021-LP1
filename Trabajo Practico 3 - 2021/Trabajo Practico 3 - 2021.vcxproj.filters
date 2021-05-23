@@ -57,9 +57,6 @@
     <ClCompile Include="Definiciones.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cListaT.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cFecha.h">

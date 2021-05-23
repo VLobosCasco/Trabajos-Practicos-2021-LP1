@@ -149,7 +149,6 @@
     <ClCompile Include="cFecha.cpp" />
     <ClCompile Include="cListaAdicional.cpp" />
     <ClCompile Include="cListaAlquiler.cpp" />
-    <ClCompile Include="cListaT.cpp" />
     <ClCompile Include="cMoto.cpp" />
     <ClCompile Include="cTrafic.cpp" />
     <ClCompile Include="cVehiculo.cpp" />
