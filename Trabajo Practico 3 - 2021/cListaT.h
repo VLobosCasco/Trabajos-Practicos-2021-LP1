@@ -36,6 +36,7 @@ public:
 	unsigned int getItemPos(string clave);
 	unsigned int getCA();
 	unsigned int getTAM();
+	//friend ostream& operator<<(ostream& os, const cListaT<T>& Lista);
 };
 
 template<class T>
@@ -234,12 +235,9 @@ void cListaT<T>::operator-(string clave)
 }
 
 template <class T>
-ostream& operator<<(ostream& os, const cListaT<T>& Lista)
+ostream& operator<<(ostream& os,  cListaT<T>& Lista)
 {
-	/*for(int i = 0; i < Lista.getCA() ; i++)
-		os << Lista.vector[i]->To_string() << endl;
-	*/
-	os << "lista" << endl;
+	os << Lista.To_String() << endl;
 	return os;
 }
 

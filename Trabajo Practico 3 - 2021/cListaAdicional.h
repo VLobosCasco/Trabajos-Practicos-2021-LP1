@@ -33,6 +33,8 @@ public:
 
 	void QuitarAdicional(eTipoAdicional tipoadicional, int cantidad);
 
+	string To_string();
+
 private:
 	void setAdicionales(eTipoAdicional primer_adicional, float primer_costo, eTipoAdicional segundo_adicional = eTipoAdicional::NONE, float segundo_costo = 0);
 
