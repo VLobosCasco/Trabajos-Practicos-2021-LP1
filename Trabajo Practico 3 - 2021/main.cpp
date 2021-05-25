@@ -40,9 +40,8 @@ void main(){
 	delete[] clientes;
 	
 	cout << "---------- LISTA DE CLIENTES ----------" << endl;
-	ListaClientes->Listar(); //este lo dejé hasta que la sobrecarga esté terminada, después hay que borrarlo Florr
 	cout << *ListaClientes;
-
+	
 	//Creo Vehiculos
 	cVehiculo** vehiculos = new cVehiculo * [N_VEHICULOS];
 
@@ -67,8 +66,8 @@ void main(){
 	delete[] vehiculos;
 
 	cout << "---------- LISTA DE VEHICULOS ----------" << endl;
-	ListaVehiculos->Listar();//Imprimir! Florrr
-
+	//ListaVehiculos->Listar();//Imprimir! Florrr
+	cout << *ListaVehiculos;
 	//Creo Alquileres y lista alquileres
 
 	cAlquiler** alquileres = new cAlquiler * [N_ALQUILERES];
@@ -88,7 +87,8 @@ void main(){
 	delete[] alquileres;
 
 	cout << "---------- LISTA DE ALQUILERES ----------" << endl;
-	ListaAlquileres->Listar(); //Florrr
+	//ListaAlquileres->Listar(); //Florrr
+	cout << *ListaAlquileres;
 
 	//creo Empresa
 	cEmpresa* empresa = new cEmpresa("Di Marco y Asociados", ListaVehiculos, ListaClientes, ListaAlquileres);
@@ -202,6 +202,7 @@ void main(){
 
 	cout << "---------- ALQUILERES CON ADICIONALES ----------" << endl;
 
+	
 	//este tiene que tener 2 cascos
 	(*ListaAlquileres)[0]->Imprimir();//FLORRR
 
@@ -210,6 +211,8 @@ void main(){
 
 	//este no tiene adicionales todavía
 	(*ListaAlquileres)[1]->Imprimir();///FLORR
+
+	//cout << *ListaAlquileres;
 
 	//Agrego 2 asientos rebatibles entonces tiene que aumentar en 2 la capacidad de pasajeros
 	try {
@@ -227,6 +230,7 @@ void main(){
 	cout << "---------- ALQUILER CON ASIENTOS REBATIBLES ADICIONALES ----------" << endl;
 	(*ListaAlquileres)[1]->Imprimir();///FLORR
 
+	
 
 	//Listo por cada vehículo y calculo ganancias
 
@@ -250,9 +254,10 @@ void main(){
 	float ganancia_total = ganancia_moto + ganancia_auto + ganancia_camioneta + ganancia_trafic;
 	cout << "Ganancia total alquileres: " << ganancia_total << endl;
 
-
+	
 
 	//Libero TODA la memoria
+
 	delete empresa;
 	delete ListaVehiculos;
 	delete ListaAlquileres;

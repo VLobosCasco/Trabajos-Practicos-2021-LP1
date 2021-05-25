@@ -34,7 +34,13 @@ cAlquiler::~cAlquiler()
 
 string cAlquiler::To_string()
 {
-	return "hola";
+	return "ID: " + IDAlquiler + "\n" +
+		"Cliente: " + cliente->To_string() + "\n" +
+		"Vehiculo: " + vehiculo->To_string() + "\n" +
+		"Adicionales: " + adicionales->To_string() + "\n" +
+		"Fecha Inicio: " + fecha_inicio->To_string() + "\n" +
+		"Fecha Fin: " + fecha_fin->To_string() + "\n" +
+		"Monto Total: " + to_string(monto_total) +  "\n\n";
 }
 
 void cAlquiler::Imprimir()

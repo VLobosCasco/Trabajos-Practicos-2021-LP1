@@ -122,7 +122,7 @@ string cEmpresa::To_string()
 	return "Nombre: " + nombre + "\n" +
 		"Lista de vehiculos: " + vehiculos->To_String() + "\n" +
 		"Lista de alquileres: " + alquileres->To_String() + "\n" +
-		"Lista de clientes: " + clientes->To_String();
+		"Lista de clientes: " + clientes->To_String() + "\n\n";
 }
 
 void cEmpresa::Imprimir()

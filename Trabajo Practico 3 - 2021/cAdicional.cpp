@@ -26,3 +26,10 @@ void cAdicional::ModificarElementos(int cant)
 	
 }
 
+string cAdicional::To_string()
+{
+	return "Elemento: " + CovertTipoAdicionalString(elemento) + "\n" 
+		"Cantidad: " + to_string(cantidad)+ "\n"
+		"Costo Diario: " + to_string(costo_diario) + "\n\n";
+}
+

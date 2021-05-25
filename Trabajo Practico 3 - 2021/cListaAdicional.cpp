@@ -159,3 +159,16 @@ void cListaAdicional::QuitarAdicional(eTipoAdicional tipoadicional, int cantidad
 	}
 	throw new exception("No es posible quitar elementos de ese tipo en este alquiler");
 }
+
+string cListaAdicional::To_string()
+{
+	string Final = "";
+	if (adicional1 != NULL)
+		Final += "Adicional 1: " + adicional1->To_string() + "\n";
+	if(adicional2!=NULL)
+		Final += "Adicional 2: " + adicional2->To_string() + "\n";
+	Final += "Cantidad actual: " + to_string(CA) + "\n" +
+		"Tarifa Diaria Adicional: " + to_string(tarifa_diaria_adicionales);
+	return Final;
+
+}

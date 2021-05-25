@@ -23,6 +23,8 @@ public:
 	//Modifica la cantidad. Aumenta la cantidad de cantidad>0, la reduce si cantidad<0
 	void ModificarElementos(int cant = 1);
 
+	string To_string();
+
 #pragma endregion
 };
 
