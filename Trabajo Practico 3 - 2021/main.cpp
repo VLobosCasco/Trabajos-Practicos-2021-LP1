@@ -32,7 +32,7 @@ void main(){
 
 	InicializarClientes(clientes);
 
-	cListaT<cCliente>* ListaClientes = new cListaT<cCliente>(3,true); //pongo un TAM < que el que necesito para probar la excepción
+	cListaT<cCliente>* ListaClientes = new cListaT<cCliente>(3,true); //pongo un TAM < que el que necesito, para probar la excepción
 	
 	AgregaraLista(ListaClientes, clientes, N_CLIENTES);
 	
@@ -95,6 +95,19 @@ void main(){
 
 	cout << "---------- EMPRESA ----------" << endl;
 	empresa->Imprimir();//FLORRR
+
+	//La empresa agrega un nuevo alquiler
+
+	try {
+
+		empresa->AgregarAlquiler(new cAlquiler((*ListaClientes)[0], (*ListaVehiculos)[4], Feb20, Mar7));
+	}
+	catch (exception* ex) {
+		string error = ex->what();
+		delete ex;
+		cout << "Error al agregar nuevo alquiler: " + error << endl;
+
+	}
 
 	//La empresa va a adquirir un vehículo, poner en mantenimiento otro, y dar de baja otro
 	cVehiculo* vehiculo_nuevo = new cAuto("987654", "789456123", "951", eColores::VIOLETA,5, Feb20);

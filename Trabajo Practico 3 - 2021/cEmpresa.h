@@ -45,6 +45,13 @@ public:
 
 #pragma endregion
 
+#pragma region Alquiler
+
+	//Agrega un alquiler a la lista
+	void AgregarAlquiler(cAlquiler* new_alquiler);
+
+#pragma endregion
+
 #pragma region To_string e Imprimir
 
 	string To_string();

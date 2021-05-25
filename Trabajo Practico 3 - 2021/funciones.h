@@ -8,6 +8,7 @@ template <class L, class T>
 void AgregaraLista(L* lista, T** items, int cantidaditems) {
 	for (unsigned int i = 0; i < cantidaditems; i++) {
 		try {
+
 			*lista+(items[i]);
 		}
 		catch (exception* ex) {

@@ -112,6 +112,11 @@ void cEmpresa::TerminarMantenimiento(string p) {
 
 }
 
+void cEmpresa::AgregarAlquiler(cAlquiler* new_alquiler)
+{
+	*alquileres + new_alquiler;
+}
+
 string cEmpresa::To_string()
 {
 	return "Nombre: " + nombre + "\n" +
