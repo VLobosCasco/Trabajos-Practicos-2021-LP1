@@ -25,14 +25,14 @@ void cEmpresa::AdquirirVehiculo(cVehiculo* vehiculo)
 		try {
 			vehiculos->AgregarItem(vehiculo);
 		}
-		catch (exception* ex) {
-			string err = ex->what();
-			delete ex;
-			throw new exception(("Error al agregar: " + err).c_str());
+		catch(exception& ex) {
+			string err = ex.what();
+						
+			throw exception(("Error al agregar: " + err).c_str());
 		}
 	}
 	else
-		throw new exception("Error al adquirir vehiculo: No hay datos del vehículo");
+		throw exception("Error al adquirir vehiculo: No hay datos del vehículo");
 }
 
 void cEmpresa::RetirardeCirculacion(cVehiculo* vehiculo)
@@ -42,7 +42,7 @@ void cEmpresa::RetirardeCirculacion(cVehiculo* vehiculo)
 		vehiculo->setEstado(eEstado::Fuera_de_servicio); //cambio el estado, no lo elimino porque lo necesito en los alquileres
 	}
 	else
-		throw new exception("Error al retirar de circulación: No hay datos del vehículo");
+		throw exception("Error al retirar de circulación: No hay datos del vehículo");
 }
 
 
@@ -53,10 +53,10 @@ void cEmpresa::RetirardeCirculacion(string patente)
 	try {
 		aux = vehiculos->BuscarItem(patente);
 	}
-	catch (exception* e) {
-		string err = e->what();
-		delete e;
-		e = new exception(("Error al buscar el vehiculo:" + err).c_str());
+	catch (exception& e) {
+		string err = e.what();
+	
+		e = exception(("Error al buscar el vehiculo:" + err).c_str());
 		throw e;
 	}
 
@@ -77,10 +77,10 @@ void cEmpresa::Mantenimiento(string patente)
 	try {
 		aux = vehiculos->BuscarItem(patente);
 	}
-	catch (exception* e) {
-		string err = e->what();
-		delete e;
-		e = new exception(("Error al buscar el vehiculo:" + err).c_str());
+	catch (exception& e) {
+		string err = e.what();
+		
+		e = exception(("Error al buscar el vehiculo:" + err).c_str());
 		throw e;
 	}
 
@@ -100,10 +100,10 @@ void cEmpresa::TerminarMantenimiento(string p) {
 	try {
 		aux = vehiculos->BuscarItem(p);
 	}
-	catch (exception* e) {
-		string err = e->what();
-		delete e;
-		e = new exception(("Error al buscar el vehiculo:" + err).c_str());
+	catch (exception& e) {
+		string err = e.what();
+		
+		e = exception(("Error al buscar el vehiculo:" + err).c_str());
 		throw e;
 	}
 

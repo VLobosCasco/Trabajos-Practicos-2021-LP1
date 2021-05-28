@@ -11,9 +11,9 @@ void AgregaraLista(L* lista, T** items, int cantidaditems) {
 
 			*lista+(items[i]);
 		}
-		catch (exception* ex) {
-			string err = ex->what();
-			delete ex;
+		catch(exception& ex) {
+			string err = ex.what();
+			
 			if (err == "No hay tamaño suficiente para agregar el item") //Me quedé sin lugar
 			{
 				lista->Redimensionalizar(); //aumento el tamaño

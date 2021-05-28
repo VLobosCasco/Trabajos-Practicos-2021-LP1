@@ -102,9 +102,9 @@ void main(){
 
 		empresa->AgregarAlquiler(new cAlquiler((*ListaClientes)[0], (*ListaVehiculos)[4], Feb20, Mar7));
 	}
-	catch (exception* ex) {
-		string error = ex->what();
-		delete ex;
+	catch(exception& ex) {
+		string error = ex.what();
+		
 		cout << "Error al agregar nuevo alquiler: " + error << endl;
 
 	}
@@ -114,10 +114,10 @@ void main(){
 	try {
 		empresa->AdquirirVehiculo(vehiculo_nuevo);
 	}
-	catch (exception* ex) {
+	catch(exception& ex) {
 
-		string error = ex->what(); //esto debería tirar error por tamaño de la lista
-		delete ex;
+		string error = ex.what(); //esto debería tirar error por tamaño de la lista
+	
 
 		if (error == "Error al agregar: No hay tamaño suficiente para agregar el item")
 		{
@@ -136,9 +136,9 @@ void main(){
 		cAlquiler* alquiler_mantenimiento = new cAlquiler((*ListaClientes)[2], ListaVehiculos->BuscarItem("ABC123"), Nov6, Nov20);
 		*(empresa->getListaAlquileres()) + alquiler_mantenimiento;
 	}
-	catch (exception* ex) {
-		string error = ex->what();
-		delete ex;
+	catch(exception& ex) {
+		string error = ex.what();
+	
 		cout << error << endl;
 	}
 
@@ -146,9 +146,9 @@ void main(){
 		cAlquiler* alquiler_vencido = new cAlquiler((*ListaClientes)[2], (*ListaVehiculos)[3], Nov6, Nov20);
 		*(empresa->getListaAlquileres()) + alquiler_vencido;
 	}
-	catch (exception* ex) {
-		string error = ex->what();
-		delete ex;
+	catch(exception& ex) {
+		string error = ex.what();
+		
 		cout << error << endl;
 	}
 
@@ -168,10 +168,10 @@ void main(){
 		(*ListaAlquileres)[0]->AgregarAdicional(eTipoAdicional::Casco, 2);
 		
 	}
-	catch(exception* ex) {
+	catch(exception& ex) {
 
-		string err = ex->what();
-		delete ex;
+		string err = ex.what();
+		
 		cout << "Error al agregar elemento: " + err << endl;
 	}
 
@@ -180,10 +180,10 @@ void main(){
 
 		(*ListaAlquileres)[0]->AgregarAdicional(eTipoAdicional::Casco, 2);
 	}
-	catch (exception* ex) {
+	catch(exception& ex) {
 
-		string err = ex->what();
-		delete ex;
+		string err = ex.what();
+		
 		cout <<  err << endl;
 	}
 
@@ -193,10 +193,10 @@ void main(){
 		(*ListaAlquileres)[2]->AgregarAdicional(eTipoAdicional::Casco, 2);
 
 	}
-	catch (exception* ex) {
+	catch(exception& ex) {
 
-		string err = ex->what();
-		delete ex;
+		string err = ex.what();
+		
 		cout << err << endl;
 	}
 
@@ -220,10 +220,10 @@ void main(){
 		(*ListaAlquileres)[1]->AgregarAdicional(eTipoAdicional::Asientos_rebatibles, 2);
 
 	}
-	catch (exception* ex) {
+	catch(exception& ex) {
 
-		string err = ex->what();
-		delete ex;
+		string err = ex.what();
+	
 		cout << err << endl;
 	}
 	

@@ -15,10 +15,10 @@ float cCamioneta::CalcularTarifa(cFecha& fecha_inicio, cFecha& fecha_fin)
 	try {
 		dias = cFecha::DiasEntreFechas(&fecha_inicio, &fecha_fin);
 	}
-	catch (exception* ex) {
-		string error = ex->what();
-		delete ex;
-		ex = new exception(("Error en las fechas de alquiler: " + error).c_str());
+	catch(exception& ex) {
+		string error = ex.what();
+	
+		ex = exception(("Error en las fechas de alquiler: " + error).c_str());
 		throw ex;
 
 	}

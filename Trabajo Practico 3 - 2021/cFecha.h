@@ -33,7 +33,7 @@ public:
 	static int DiasEntreFechas(cFecha* inicio, cFecha* fin);
 
 	//Devuelve si las fechas se superponen
-	static bool FechasSuperpuestas(cFecha* inicio1, cFecha* fin1, cFecha* inicio2, cFecha* fin2);
+	static bool IsOverlapped(cFecha* inicio1, cFecha* fin1, cFecha* inicio2, cFecha* fin2);
 
 	//Cambia la fecha a la fecha actual
 	void SetHoy();

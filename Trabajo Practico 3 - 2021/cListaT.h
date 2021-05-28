@@ -117,12 +117,12 @@ bool cListaT<T>::AgregarItem(T * item)
 {
 	T *i_f = BuscarItem(item->getclave());
 	if (i_f != NULL)
-		throw new exception("Ya se encuentra en la lista");
+		throw exception("Ya se encuentra en la lista");
 
 	if (CA < TAM)
 		vector[CA++] = item;
 	else
-		throw new exception("No hay tamaño suficiente para agregar el item");
+		throw exception("No hay tamaño suficiente para agregar el item");
 	return true;
 }
 
@@ -141,7 +141,7 @@ template<class T>
 T* cListaT<T>::QuitarenPos(unsigned int pos) {
 
 	if (pos >= CA || pos < 0)
-		throw new exception("Posicion invalida");
+		throw exception("Posicion invalida");
 
 	T *aux = vector[pos];
 
@@ -190,7 +190,7 @@ T* cListaT<T>::getItem(unsigned int pos)
 	if (pos < CA && pos>=0)
 		return vector[pos];
 	else 
-		throw new exception("Posición inválida");
+		throw exception("Posición inválida");
 }
 
 template<class T>

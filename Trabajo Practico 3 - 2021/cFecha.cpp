@@ -36,17 +36,17 @@ int cFecha::DiasEntreFechas(cFecha* inicio, cFecha* fin)
 	{
 		//verifico que fecha fin > fecha inicio con operador sobrecargado
 		if (*inicio > *fin)
-			throw new exception("Las fechas no son válidas");
+			throw exception("Las fechas no son válidas");
 		else
 		{
 			dif = difftime(aux_fin, aux_inicio) / (86400); //calculo la diferencia de tiempo en segundos, transforma a dias,  y la devuelvo
 			return dif;
 		}
 	}
-	else throw new exception("Fechas incompletas");
+	else throw exception("Fechas incompletas");
 }
 
-bool cFecha::FechasSuperpuestas(cFecha* inicio1, cFecha* fin1, cFecha* inicio2, cFecha* fin2)
+bool cFecha::IsOverlapped(cFecha* inicio1, cFecha* fin1, cFecha* inicio2, cFecha* fin2)
 {
 	if ((*inicio2 > *inicio1 && *inicio2 < *fin1) || *inicio1 == *inicio2) 
 		return true;
@@ -64,7 +64,7 @@ void cFecha::SetHoy()
 	tm* aux = localtime(&now); //obtengo fecha actual
 	fecha.tm_mday = aux->tm_mday;
 	fecha.tm_mon = aux->tm_mon;
-	fecha.tm_year = aux->tm_mon;
+	fecha.tm_year = aux->tm_year;
 }
 
 bool cFecha::FechaCompleta()

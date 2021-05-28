@@ -13,7 +13,7 @@ cAlquiler::cAlquiler(cCliente* _cliente, cVehiculo* _vehiculo, cFecha* _fecha_in
 	if (_vehiculo->getEstado() == eEstado::Libre)
 		vehiculo = _vehiculo;
 	else
-		throw new exception("El vehículo no se encuentra disponible");
+		throw exception("El vehículo no se encuentra disponible");
 	fecha_inicio = new cFecha(*_fecha_inicio);
 	fecha_fin = new cFecha(*_fecha_final);
 	adicionales = new cListaAdicional(_vehiculo, costo1, costo2);
@@ -82,33 +82,25 @@ void cAlquiler::ActualizarMontoTotal()
 
 void cAlquiler::AgregarAdicional(eTipoAdicional tipoAdicional, int cant)
 {
-	try {
-		adicionales->AgregarAdicional(tipoAdicional, cant);
-		ActualizarMontoTotal();
-		if (tipoAdicional == eTipoAdicional::Asientos_rebatibles) //si agregué asientos, aumento la cantidad de plazas
-			vehiculo->ModificarAsientos(cant);
-	}
-	catch (exception* ex) {
-		throw ex;
-	}
+
+	adicionales->AgregarAdicional(tipoAdicional, cant);
+	ActualizarMontoTotal();
+	if (tipoAdicional == eTipoAdicional::Asientos_rebatibles) //si agregué asientos, aumento la cantidad de plazas
+		vehiculo->ModificarAsientos(cant);
 }
 
 bool cAlquiler::VerificarDisponibilidad(cFecha* inicio, cFecha* fin) 
 {
-	bool aux = cFecha::FechasSuperpuestas(fecha_inicio, fecha_fin, inicio, fin); 
+	bool aux = cFecha::IsOverlapped(fecha_inicio, fecha_fin, inicio, fin); 
 	return !aux; //si las fechas se superponen, entonces no está disponible
 }
 
 void cAlquiler::QuitarAdicional(eTipoAdicional tipoAdicional, int cant)
 {
-	try {
 		adicionales->QuitarAdicional(tipoAdicional, cant);
 		ActualizarMontoTotal();
 		if (tipoAdicional == eTipoAdicional::Asientos_rebatibles) //si saqué asientos, reduzco la cantidad de plazas
 			vehiculo->ModificarAsientos(-cant);
-	}
-	catch (exception* ex) {
-		throw ex;
-	}
+	
 }
 
