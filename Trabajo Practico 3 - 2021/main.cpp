@@ -14,7 +14,7 @@
 using namespace std;
 
 
-void main(){
+int main(){
 	
 	//Creo fechas
 	cFecha* Nov6 = new cFecha(6, 11, 2021);
@@ -272,5 +272,5 @@ void main(){
 	delete Feb20 ;
 	delete Mar7 ;
 
-
+	return 0;
 };
