@@ -36,14 +36,14 @@ int cFecha::DiasEntreFechas(cFecha* inicio, cFecha* fin)
 	{
 		//verifico que fecha fin > fecha inicio con operador sobrecargado
 		if (*inicio > *fin)
-			throw new exception("Las fechas no son válidas");
+			throw new runtime_error("Las fechas no son válidas");
 		else
 		{
 			dif = difftime(aux_fin, aux_inicio) / (86400); //calculo la diferencia de tiempo en segundos, transforma a dias,  y la devuelvo
 			return dif;
 		}
 	}
-	else throw new exception("Fechas incompletas");
+	else throw new runtime_error("Fechas incompletas");
 }
 
 bool cFecha::FechasSuperpuestas(cFecha* inicio1, cFecha* fin1, cFecha* inicio2, cFecha* fin2)

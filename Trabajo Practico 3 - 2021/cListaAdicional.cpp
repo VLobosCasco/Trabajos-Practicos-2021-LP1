@@ -93,11 +93,11 @@ void cListaAdicional::AgregarAdicional(eTipoAdicional tipoadicional, int cant)
 				ActualizarTarifaDiaria();//si fue exitoso, actualizo la tarifa diaria
 				return;
 			}
-			catch (exception* ex)
+			catch (runtime_error* ex)
 			{
 				string err = ex->what();
 				delete ex;
-				ex = new exception(("Error al agregar elementos: " + err).c_str());
+				ex = new runtime_error(("Error al agregar elementos: " + err).c_str());
 				throw ex;
 			}
 		}
@@ -112,17 +112,17 @@ void cListaAdicional::AgregarAdicional(eTipoAdicional tipoadicional, int cant)
 				ActualizarTarifaDiaria();//si fue exitoso, actualizo la tarifa diaria
 				return;
 			}
-			catch (exception* ex)
+			catch (runtime_error* ex)
 			{
 				string err = ex->what();
 				delete ex;
-				ex = new exception(("Error al agregar elementos: " + err).c_str());
+				ex = new runtime_error(("Error al agregar elementos: " + err).c_str());
 				throw ex;
 			}
 		}
 		
 		//si el elemento no correspode con adicional1 ni adicional2 entonces no corresponde al tipo de vehiculo
-		throw new exception("No es posible agregar elementos de ese tipo en este alquiler");
+		throw new runtime_error("No es posible agregar elementos de ese tipo en este alquiler");
 	}
 }
 
@@ -134,11 +134,11 @@ void cListaAdicional::QuitarAdicional(eTipoAdicional tipoadicional, int cantidad
 			ActualizarTarifaDiaria();
 			return;
 		}
-		catch (exception* ex)
+		catch (runtime_error* ex)
 		{
 			string err = ex->what();
 			delete ex;
-			ex = new exception(("Error al quitar elementos: " + err).c_str());
+			ex = new runtime_error(("Error al quitar elementos: " + err).c_str());
 			throw ex;
 		}
 	}
@@ -149,15 +149,15 @@ void cListaAdicional::QuitarAdicional(eTipoAdicional tipoadicional, int cantidad
 			ActualizarTarifaDiaria();
 			return;
 		}
-		catch (exception* ex)
+		catch (runtime_error* ex)
 		{
 			string err = ex->what();
 			delete ex;
-			ex = new exception(("Error al quitar elementos: " + err).c_str());
+			ex = new runtime_error(("Error al quitar elementos: " + err).c_str());
 			throw ex;
 		}
 	}
-	throw new exception("No es posible quitar elementos de ese tipo en este alquiler");
+	throw new runtime_error("No es posible quitar elementos de ese tipo en este alquiler");
 }
 
 string cListaAdicional::To_string()

@@ -16,10 +16,10 @@ float cTrafic::CalcularTarifa(cFecha& fecha_inicio, cFecha& fecha_fin)
 	try {
 		dias = cFecha::DiasEntreFechas(&fecha_inicio, &fecha_fin);
 	}
-	catch (exception* ex) {
+	catch (runtime_error* ex) {
 		string error = ex->what();
 		delete ex;
-		ex = new exception(("Error en las fechas de alquiler: " + error).c_str());
+		ex = new runtime_error(("Error en las fechas de alquiler: " + error).c_str());
 		throw ex;
 
 	}

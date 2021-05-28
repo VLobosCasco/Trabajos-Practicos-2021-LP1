@@ -13,7 +13,7 @@ cAlquiler::cAlquiler(cCliente* _cliente, cVehiculo* _vehiculo, cFecha* _fecha_in
 	if (_vehiculo->getEstado() == eEstado::Libre)
 		vehiculo = _vehiculo;
 	else
-		throw new exception("El vehículo no se encuentra disponible");
+		throw new runtime_error("El vehículo no se encuentra disponible");
 	fecha_inicio = new cFecha(*_fecha_inicio);
 	fecha_fin = new cFecha(*_fecha_final);
 	adicionales = new cListaAdicional(_vehiculo, costo1, costo2);
@@ -88,7 +88,7 @@ void cAlquiler::AgregarAdicional(eTipoAdicional tipoAdicional, int cant)
 		if (tipoAdicional == eTipoAdicional::Asientos_rebatibles) //si agregué asientos, aumento la cantidad de plazas
 			vehiculo->ModificarAsientos(cant);
 	}
-	catch (exception* ex) {
+	catch (runtime_error* ex) {
 		throw ex;
 	}
 }
@@ -107,7 +107,7 @@ void cAlquiler::QuitarAdicional(eTipoAdicional tipoAdicional, int cant)
 		if (tipoAdicional == eTipoAdicional::Asientos_rebatibles) //si saqué asientos, reduzco la cantidad de plazas
 			vehiculo->ModificarAsientos(-cant);
 	}
-	catch (exception* ex) {
+	catch (runtime_error* ex) {
 		throw ex;
 	}
 }
