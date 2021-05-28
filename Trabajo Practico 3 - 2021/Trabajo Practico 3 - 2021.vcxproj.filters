@@ -48,7 +48,7 @@
     <ClCompile Include="cAdicional.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cListaAdicional.cpp">
+    <ClCompile Include="cDuplaAdicional.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
@@ -98,7 +98,7 @@
     <ClInclude Include="cAdicional.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cListaAdicional.h">
+    <ClInclude Include="cDuplaAdicional.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="funciones.h">

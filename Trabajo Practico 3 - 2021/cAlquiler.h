@@ -3,7 +3,7 @@
 #include "cFecha.h"
 #include "cVehiculo.h"
 #include "cCliente.h"
-#include "cListaAdicional.h"
+#include "cDuplaAdicional.h"
 #include "cListaT.h"
 
 class cEmpresa;
@@ -16,7 +16,7 @@ private:
 	const string IDAlquiler;
 	cCliente* cliente;
 	cVehiculo* vehiculo;
-	cListaAdicional* adicionales;
+	cDuplaAdicional* adicionales;
 	cFecha* fecha_inicio;
 	cFecha* fecha_fin;
 	float monto_total;

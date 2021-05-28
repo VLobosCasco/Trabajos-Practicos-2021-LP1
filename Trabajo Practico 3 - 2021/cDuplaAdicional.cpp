@@ -1,10 +1,10 @@
-#include "cListaAdicional.h"
+#include "cDuplaAdicional.h"
 #include "cMoto.h"
 #include "cAuto.h"
 #include "cCamioneta.h"
 #include "cTrafic.h"
 
-cListaAdicional::cListaAdicional(cVehiculo* vehiculo, float costo_primer_adicional, float costo_segundo_adicional)
+cDuplaAdicional::cDuplaAdicional(cVehiculo* vehiculo, float costo_primer_adicional, float costo_segundo_adicional)
 {
 	adicional1 = NULL;
 	adicional2 = NULL;
@@ -44,7 +44,7 @@ cListaAdicional::cListaAdicional(cVehiculo* vehiculo, float costo_primer_adicion
 }
 
 
-void cListaAdicional::setAdicionales(eTipoAdicional primer_adicional, float primer_costo, eTipoAdicional segundo_adicional, float segundo_costo)
+void cDuplaAdicional::setAdicionales(eTipoAdicional primer_adicional, float primer_costo, eTipoAdicional segundo_adicional, float segundo_costo)
 {
 	if (primer_costo == 0) 
 		primer_costo = getCostoAdicionalDefault(primer_adicional); //si los costos son 0, uso los default
@@ -62,7 +62,7 @@ void cListaAdicional::setAdicionales(eTipoAdicional primer_adicional, float prim
 }
 
 
-cListaAdicional::~cListaAdicional()
+cDuplaAdicional::~cDuplaAdicional()
 {
 	if (adicional1 != NULL) 
 		delete adicional1;
@@ -70,7 +70,7 @@ cListaAdicional::~cListaAdicional()
 		delete adicional2;
 }
 
-void cListaAdicional::ActualizarTarifaDiaria() //actualiza la tarifa diaria según la cantidad de elementos
+void cDuplaAdicional::ActualizarTarifaDiaria() //actualiza la tarifa diaria según la cantidad de elementos
 {
 	tarifa_diaria_adicionales = 0;
 	
@@ -81,7 +81,7 @@ void cListaAdicional::ActualizarTarifaDiaria() //actualiza la tarifa diaria segú
 		tarifa_diaria_adicionales =+ adicional2->CalcularCostoDiarioTotal();
 }
 
-void cListaAdicional::AgregarAdicional(eTipoAdicional tipoadicional, int cant)
+void cDuplaAdicional::AgregarAdicional(eTipoAdicional tipoadicional, int cant)
 {
 	if (adicional1 != NULL) {
 
@@ -126,7 +126,7 @@ void cListaAdicional::AgregarAdicional(eTipoAdicional tipoadicional, int cant)
 	}
 }
 
-void cListaAdicional::QuitarAdicional(eTipoAdicional tipoadicional, int cantidad) //funciona de la misma forma que agregar
+void cDuplaAdicional::QuitarAdicional(eTipoAdicional tipoadicional, int cantidad) //funciona de la misma forma que agregar
 {
 	if (adicional1->elemento == tipoadicional) {
 		try {
@@ -160,7 +160,7 @@ void cListaAdicional::QuitarAdicional(eTipoAdicional tipoadicional, int cantidad
 	throw exception("No es posible quitar elementos de ese tipo en este alquiler");
 }
 
-string cListaAdicional::To_string()
+string cDuplaAdicional::To_string()
 {
 	string Final = "";
 	if (adicional1 != NULL)

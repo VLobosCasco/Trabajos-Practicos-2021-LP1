@@ -5,7 +5,7 @@
 #include <iostream>
 
 using namespace std;
-class cListaAdicional
+class cDuplaAdicional
 {
 	friend class cAlquiler;
 	cAdicional* adicional1;
@@ -18,9 +18,9 @@ public:
 #pragma region Constructor Destructor
 
 
-	cListaAdicional(cVehiculo* vehiculo, float costo_primer_adicional = 0, float costo_segundo_adicional = 0);
+	cDuplaAdicional(cVehiculo* vehiculo, float costo_primer_adicional = 0, float costo_segundo_adicional = 0);
 
-	~cListaAdicional();
+	~cDuplaAdicional();
 
 #pragma endregion
 

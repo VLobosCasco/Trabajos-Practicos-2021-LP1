@@ -147,7 +147,7 @@
     <ClCompile Include="cCliente.cpp" />
     <ClCompile Include="cEmpresa.cpp" />
     <ClCompile Include="cFecha.cpp" />
-    <ClCompile Include="cListaAdicional.cpp" />
+    <ClCompile Include="cDuplaAdicional.cpp" />
     <ClCompile Include="cListaAlquiler.cpp" />
     <ClCompile Include="cMoto.cpp" />
     <ClCompile Include="cTrafic.cpp" />
@@ -163,7 +163,7 @@
     <ClInclude Include="cCliente.h" />
     <ClInclude Include="cEmpresa.h" />
     <ClInclude Include="cFecha.h" />
-    <ClInclude Include="cListaAdicional.h" />
+    <ClInclude Include="cDuplaAdicional.h" />
     <ClInclude Include="cListaAlquiler.h" />
     <ClInclude Include="cListaT.h" />
     <ClInclude Include="cMoto.h" />
