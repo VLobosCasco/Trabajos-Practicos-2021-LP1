@@ -17,7 +17,6 @@ public:
 
 #pragma region Constructor Destructor
 
-
 	cDuplaAdicional(cVehiculo* vehiculo, float costo_primer_adicional = 0, float costo_segundo_adicional = 0);
 
 	~cDuplaAdicional();
@@ -36,6 +35,8 @@ public:
 	string To_string();
 
 private:
+	//Metodo privado, adiciono de forma más funcional los adicionales según su tipo o costo.
+	//Estructura más legible el codigo de agregar adicional y el constructor
 	void setAdicionales(eTipoAdicional primer_adicional, float primer_costo, eTipoAdicional segundo_adicional = eTipoAdicional::NONE, float segundo_costo = 0);
 
 #pragma endregion

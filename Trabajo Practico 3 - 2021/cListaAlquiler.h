@@ -6,22 +6,26 @@ class cListaAlquiler :
 {
 public:
 #pragma region Constructor
+
 	cListaAlquiler();
 	cListaAlquiler(int tam, bool eliminar);
+
 #pragma endregion
 
 #pragma region Metodos
 
 	// Lista todos los alquileres de un cierto tipo de vehiculo
-	template <class TipoVehiculo> //esto me permite usar el mismo código para las 4 impresiones
+	//esto me permite usar el mismo código para las 4 impresiones
+	template <class TipoVehiculo> 
 	void ListarAlquiler();
 
 	// Lista todos los alquileres y devuelve la ganancia total de un cierto tipo de vehiculo
-	template <class TipoVehiculo>//esto me permite usar el mismo código para las 4 impresiones y cálculo de ganancia
+	//esto me permite usar el mismo código para las 4 impresiones y cálculo de ganancia
+	template <class TipoVehiculo>
 	float ListarGananciaAlquiler();
 
 	//Agregar Alquiler, verifica que el vehiculo no se superponga
-	void AgregarItem(cAlquiler* item); //sobreescribo el de cListaT porque necesito ahcer otras verificaciones
+	void AgregarItem(cAlquiler* item); //sobreescribo el de cListaT porque necesito hacer otras verificaciones
 	
 	//To String
 	string To_String();

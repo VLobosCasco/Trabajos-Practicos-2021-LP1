@@ -3,8 +3,8 @@
 #include "cAlquiler.h"
 #include "cEmpresa.h"
 
-template <class L, class T>
 //Agrega a la lista pasada por parámetros los items pasados por parámetro. Tiene manejo de excepciones
+template <class L, class T>
 void AgregaraLista(L* lista, T** items, int cantidaditems) {
 	for (unsigned int i = 0; i < cantidaditems; i++) {
 		try {
