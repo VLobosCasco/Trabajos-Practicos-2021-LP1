@@ -13,7 +13,7 @@ cAlquiler::cAlquiler(cCliente* _cliente, cVehiculo* _vehiculo, cFecha* _fecha_in
 	if (_vehiculo->getEstado() == eEstado::Libre)
 		vehiculo = _vehiculo;
 	else
-		throw exception("El vehículo no se encuentra disponible");
+		throw runtime_error("El vehículo no se encuentra disponible");
 	fecha_inicio = new cFecha(*_fecha_inicio);
 	fecha_fin = new cFecha(*_fecha_final);
 	adicionales = new cDuplaAdicional(_vehiculo, costo1, costo2);

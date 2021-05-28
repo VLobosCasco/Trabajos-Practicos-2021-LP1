@@ -110,11 +110,11 @@ bool cListaT<T>::AgregarItem(T* item)
 {
 
 	T* i_f = BuscarItem(item->getclave());
-	if (i_f != NULL)throw new exception("Ya se encuentra en la lista");
+	if (i_f != NULL)throw new runtime_error("Ya se encuentra en la lista");
 
 	if (CA < TAM)
 		vector[CA++] = item;
-	else throw new exception("No hay tama�o suficiente para agregar el item");;
+	else throw new runtime_error("No hay tama�o suficiente para agregar el item");;
 	return true;
 }
 
@@ -135,7 +135,7 @@ T* cListaT<T>::Quitar(const T* item) {
 template<class T>
 T* cListaT<T>::QuitarenPos(unsigned int pos) {
 
-	if (pos >= CA)throw new exception("Posicion invalida");
+	if (pos >= CA)throw new runtime_error("Posicion invalida");
 
 	T* aux = vector[pos];
 
@@ -175,7 +175,7 @@ void cListaT<T>::Eliminar(unsigned int pos) {
 		delete dato;
 	else
 	{
-		throw new exception("no encontrado");
+		throw new runtime_error("no encontrado");
 	}
 }
 

@@ -11,7 +11,7 @@ void AgregaraLista(L* lista, T** items, int cantidaditems) {
 
 			*lista+(items[i]);
 		}
-		catch(exception& ex) {
+		catch(runtime_error& ex) {
 			string err = ex.what();
 			
 			if (err == "No hay tamaño suficiente para agregar el item") //Me quedé sin lugar

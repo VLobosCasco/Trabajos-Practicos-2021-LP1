@@ -14,13 +14,13 @@ float cAdicional::CalcularCostoDiarioTotal()
 void cAdicional::ModificarElementos(int cant)
 {
 	if (cantidad + cant < 0) //me fijo que si voy a eliminar (cant<0) no elimine más elementos de los que tengo
-		throw exception((("No se puede quitar esa cantidad de elementos. Cantidad de elementos disponibles: ")
+		throw runtime_error((("No se puede quitar esa cantidad de elementos. Cantidad de elementos disponibles: ")
 			+ std::to_string(cantidad)).c_str());
 	
 	if (elemento != eTipoAdicional::Casco)
 		cantidad = +cant;
 	else if (cantidad + cant > 2) //puedo alquilar solo 1 o 2 cascos
-		throw exception("Se ha alcanzado el número máximo de cascos: 2");
+		throw runtime_error("Se ha alcanzado el número máximo de cascos: 2");
 
 	cantidad = +cant;
 	

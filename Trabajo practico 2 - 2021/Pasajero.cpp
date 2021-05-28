@@ -22,10 +22,10 @@ void Pasajero::ArribarEstacion(int HoraBajada, int MinutoBajada)
 
 	//Mejor irse antes
 	if (HoraSubida > HoraBajada)
-		throw new exception("Horario de bajada incorrecto");
+		throw new runtime_error("Horario de bajada incorrecto");
 	if (HoraSubida == HoraBajada) {
 		if (MinSubida > MinutoBajada) {
-			throw new exception("Horario de bajada incorrecto");
+			throw new runtime_error("Horario de bajada incorrecto");
 		}
 	}
 	//Si todo va bien, pongo la hora

@@ -93,11 +93,11 @@ void cDuplaAdicional::AgregarAdicional(eTipoAdicional tipoadicional, int cant)
 				ActualizarTarifaDiaria();//si fue exitoso, actualizo la tarifa diaria
 				return;
 			}
-			catch(exception& ex)
+			catch(runtime_error& ex)
 			{
 				string err = ex.what();
 				
-				ex = exception(("Error al agregar elementos: " + err).c_str());
+				ex = runtime_error(("Error al agregar elementos: " + err).c_str());
 				throw ex;
 			}
 		}
@@ -112,17 +112,17 @@ void cDuplaAdicional::AgregarAdicional(eTipoAdicional tipoadicional, int cant)
 				ActualizarTarifaDiaria();//si fue exitoso, actualizo la tarifa diaria
 				return;
 			}
-			catch(exception& ex)
+			catch(runtime_error& ex)
 			{
 				string err = ex.what();
 				
-				ex = exception(("Error al agregar elementos: " + err).c_str());
+				ex = runtime_error(("Error al agregar elementos: " + err).c_str());
 				throw ex;
 			}
 		}
 		
 		//si el elemento no correspode con adicional1 ni adicional2 entonces no corresponde al tipo de vehiculo
-		throw exception("No es posible agregar elementos de ese tipo en este alquiler");
+		throw runtime_error("No es posible agregar elementos de ese tipo en este alquiler");
 	}
 }
 
@@ -134,11 +134,11 @@ void cDuplaAdicional::QuitarAdicional(eTipoAdicional tipoadicional, int cantidad
 			ActualizarTarifaDiaria();
 			return;
 		}
-		catch(exception& ex)
+		catch(runtime_error& ex)
 		{
 			string err = ex.what();
 		
-			ex = exception(("Error al quitar elementos: " + err).c_str());
+			ex = runtime_error(("Error al quitar elementos: " + err).c_str());
 			throw ex;
 		}
 	}
@@ -149,15 +149,15 @@ void cDuplaAdicional::QuitarAdicional(eTipoAdicional tipoadicional, int cantidad
 			ActualizarTarifaDiaria();
 			return;
 		}
-		catch(exception& ex)
+		catch(runtime_error& ex)
 		{
 			string err = ex.what();
 		
-			ex = exception(("Error al quitar elementos: " + err).c_str());
+			ex = runtime_error(("Error al quitar elementos: " + err).c_str());
 			throw ex;
 		}
 	}
-	throw exception("No es posible quitar elementos de ese tipo en este alquiler");
+	throw runtime_error("No es posible quitar elementos de ese tipo en este alquiler");
 }
 
 string cDuplaAdicional::To_string()

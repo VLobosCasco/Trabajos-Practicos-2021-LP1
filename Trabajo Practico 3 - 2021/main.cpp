@@ -102,7 +102,7 @@ int main(){
 
 		empresa->AgregarAlquiler(new cAlquiler((*ListaClientes)[0], (*ListaVehiculos)[4], Feb20, Mar7));
 	}
-	catch(exception& ex) {
+	catch(runtime_error& ex) {
 		string error = ex.what();
 		
 		cout << "Error al agregar nuevo alquiler: " + error << endl;
@@ -114,7 +114,7 @@ int main(){
 	try {
 		empresa->AdquirirVehiculo(vehiculo_nuevo);
 	}
-	catch(exception& ex) {
+	catch(runtime_error& ex) {
 
 		string error = ex.what(); //esto debería tirar error por tamaño de la lista
 	
@@ -136,7 +136,7 @@ int main(){
 		cAlquiler* alquiler_mantenimiento = new cAlquiler((*ListaClientes)[2], ListaVehiculos->BuscarItem("ABC123"), Nov6, Nov20);
 		*(empresa->getListaAlquileres()) + alquiler_mantenimiento;
 	}
-	catch(exception& ex) {
+	catch(runtime_error& ex) {
 		string error = ex.what();
 	
 		cout << error << endl;
@@ -146,7 +146,7 @@ int main(){
 		cAlquiler* alquiler_vencido = new cAlquiler((*ListaClientes)[2], (*ListaVehiculos)[3], Nov6, Nov20);
 		*(empresa->getListaAlquileres()) + alquiler_vencido;
 	}
-	catch(exception& ex) {
+	catch(runtime_error& ex) {
 		string error = ex.what();
 		
 		cout << error << endl;
@@ -168,7 +168,7 @@ int main(){
 		(*ListaAlquileres)[0]->AgregarAdicional(eTipoAdicional::Casco, 2);
 		
 	}
-	catch(exception& ex) {
+	catch(runtime_error& ex) {
 
 		string err = ex.what();
 		
@@ -180,7 +180,7 @@ int main(){
 
 		(*ListaAlquileres)[0]->AgregarAdicional(eTipoAdicional::Casco, 2);
 	}
-	catch(exception& ex) {
+	catch(runtime_error& ex) {
 
 		string err = ex.what();
 		
@@ -193,7 +193,7 @@ int main(){
 		(*ListaAlquileres)[2]->AgregarAdicional(eTipoAdicional::Casco, 2);
 
 	}
-	catch(exception& ex) {
+	catch(runtime_error& ex) {
 
 		string err = ex.what();
 		
@@ -220,7 +220,7 @@ int main(){
 		(*ListaAlquileres)[1]->AgregarAdicional(eTipoAdicional::Asientos_rebatibles, 2);
 
 	}
-	catch(exception& ex) {
+	catch(runtime_error& ex) {
 
 		string err = ex.what();
 	
